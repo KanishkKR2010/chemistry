@@ -15,9 +15,7 @@
 
 :root {
     --background: #0e0e0e;
-    --card: #07120b;
-;
-    --card: ;
+    --card: #ffffff;
 
     --text: #172033;
     --muted: #68738a;
@@ -27,7 +25,7 @@
     --accent: #5964f2;
 
     /* Molecular Lab navigation */
-    --lab-green: #39ff88;
+    --lab-green: #0b0b0b;
     --lab-dark: #030604;
     --lab-dark-2: #07120b;
 }
@@ -49,9 +47,9 @@ body {
     background:
         linear-gradient(
             135deg,
-            #010101,
-            #010101,
-           #010101
+            #070707,
+            #050505,
+            #010101
         );
 
     color: var(--text);
@@ -204,7 +202,7 @@ body {
 .logo-subtitle {
     margin-top: 3px;
 
-    color: #07120b;
+    color: #617568;
 
     font-size: 8px;
     font-weight: 700;
@@ -243,7 +241,7 @@ body {
 
     position: relative;
 
-    color: #07120b;
+    color: #718579;
 
     text-decoration: none;
 
@@ -252,7 +250,7 @@ body {
 
     letter-spacing: 1px;
 
-    #07120b-space: nowrap;
+    white-space: nowrap;
 
     transition:
         color .2s ease,
@@ -295,7 +293,7 @@ body {
     color: #effff3;
 
     background:
-        rgba(57,255,136,.035);
+        rgba(213, 225, 218, 0.035);
 }
 
 
@@ -312,7 +310,7 @@ body {
     color: var(--lab-green);
 
     background:
-        rgba(57,255,136,.025);
+        rgba(238, 246, 241, 0.025);
 }
 
 
@@ -404,7 +402,7 @@ main {
 
     padding: 0 28px;
 
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(12, 12, 12, 0.96);
 
     border-bottom: 1px solid #e6eaf2;
 
@@ -456,7 +454,7 @@ main {
         #67b186
     );
 
-    color: #07120b;
+    color: white;
 
     font-size: 22px;
 
@@ -479,7 +477,7 @@ main {
 
     letter-spacing: 1.5px;
 
-    #07120b-space: nowrap;
+    white-space: nowrap;
 }
 
 
@@ -497,7 +495,7 @@ main {
 
     letter-spacing: 2px;
 
-    #07120b-space: nowrap;
+    white-space: nowrap;
 }
 
 
@@ -546,7 +544,7 @@ main {
 
     letter-spacing: 0.7px;
 
-    #07120b-space: nowrap;
+    white-space: nowrap;
 
     transition: 0.25s ease;
 }
@@ -688,7 +686,7 @@ main {
 .reset-btn:hover {
     background: #56c173;
 
-    color: #07120b;
+    color: white;
 
     transform: translateY(-1px);
 
@@ -771,7 +769,7 @@ main {
 
     border-radius: 24px;
 
-    background: #07120b;
+    background: rgb(6, 6, 6);
 
     border:
         1px solid var(--border);
@@ -779,6 +777,7 @@ main {
     box-shadow:
         0 12px 40px
         rgba(70,90,140,0.08);
+        color:white;
 }
 
 
@@ -789,7 +788,7 @@ main {
 
     border-radius: 999px;
 
-    background: #eef0ff;
+    background: #121213;
 
     color: #555cf0;
 
@@ -836,7 +835,7 @@ main {
 
     border-radius: 15px;
 
-    background: #f7f9ff;
+    background: #141415;
 
     text-align: center;
 }
@@ -876,7 +875,7 @@ main {
     border:
         1px solid var(--border);
 
-    background: #07120b;
+    background: white;
 
     color: #4e5870;
 
@@ -902,7 +901,7 @@ main {
 .property-tabs button.active {
     background: #5964f2;
 
-    color: #07120b;
+    color: white;
 
     border-color: #5964f2;
 
@@ -928,7 +927,7 @@ main {
 
     padding: 14px 16px;
 
-    background: #07120b;
+    background: white;
 
     border:
         1px solid var(--border);
@@ -1133,7 +1132,7 @@ main {
 
     text-align: center;
 
-    #07120b-space: nowrap;
+    white-space: nowrap;
 
     max-width: 100%;
 
@@ -1161,7 +1160,7 @@ main {
 .details {
     margin-top: 25px;
 
-    background: #07120b;
+    background: white;
 
     border:
         1px solid var(--border);
@@ -1534,7 +1533,7 @@ main {
         #727cff
     );
 
-    color: #07120b;
+    color: white;
 
     font-family: Inter, Arial, sans-serif;
     font-size: 13px;
@@ -1645,7 +1644,7 @@ main {
         #7b84ff
     );
 
-    color: #07120b;
+    color: white;
 
     font-size: 23px;
 
