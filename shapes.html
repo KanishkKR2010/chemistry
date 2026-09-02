@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Molecular Lab</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         GLOBAL NAVIGATION / TITLE BAR
+    ====================================================== -->
+    <header class="site-header">
+
+        <!-- LEFT: BACK BUTTON -->
+        <button
+            class="back-btn"
+            type="button"
+            onclick="history.back()"
+            title="Go Back"
+            aria-label="Go Back"
+        >
+            ←
+        </button>
+
+        <!-- LOGO / TITLE -->
+        <a href="home.html" class="site-logo">
+
+            <div class="logo-icon">⚗</div>
+
+            <div class="logo-text">
+                <div class="logo-title">MOLECULAR LAB</div>
+                <div class="logo-subtitle">INTERACTIVE CHEMISTRY</div>
+            </div>
+
+        </a>
+
+        <!-- NAVIGATION -->
+        <nav class="main-nav" aria-label="Main Navigation">
+
+            <a href="home.html" class="nav-link">
+                HOME
+            </a>
+
+            <a href="shapes.html" class="nav-link active">
+                SHAPES
+            </a>
+
+            <a href="bond.html" class="nav-link">
+                BONDING
+            </a>
+
+            <a href="polar.html" class="nav-link">
+                POLARITY
+            </a>
+
+            <a href="periodic.html" class="nav-link">
+                PERIODIC TABLE
+            </a>
+
+        </nav>
+
+        <!-- RIGHT: STATUS -->
+        <div class="lab-status">
+            <span class="status-light"></span>
+            LAB ONLINE
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+    <main>
+
+        <!-- =================================================
+             MOLECULAR PAGE
+        ================================================== -->
+        <section id="moleculePage">
+
+            <!-- =============================================
+                 MOLECULAR VIEWER
+            ============================================== -->
+            <section class="viewerArea">
+
+                <!-- THREE.JS VIEWER -->
+                <div id="viewer"></div>
+
+
+                <!-- VIEWER CONTROLS -->
+                <div class="viewerControls">
+
+                    <button
+                        type="button"
+                        onclick="resetCamera()"
+                    >
+                        Reset
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="toggleLabels()"
+                    >
+                        Labels
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="toggleBonds()"
+                    >
+                        Bonds
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="randomMolecule()"
+                    >
+                        Random
+                    </button>
+
+                </div>
+
+
+                <!-- MOLECULE INFORMATION -->
+                <div class="moleculeInfo">
+
+                    <h2 id="moleculeName">
+                        Select a molecule
+                    </h2>
+
+                    <div
+                        class="formula"
+                        id="moleculeFormula"
+                    >
+                        —
+                    </div>
+
+
+                    <div class="infoGrid">
+
+                        <!-- SHAPE -->
+                        <div>
+                            <span>Shape</span>
+                            <strong id="shape">—</strong>
+                        </div>
+
+                        <!-- HYBRIDIZATION -->
+                        <div>
+                            <span>Hybridization</span>
+                            <strong id="hybridization">—</strong>
+                        </div>
+
+                        <!-- BOND ANGLE -->
+                        <div>
+                            <span>Bond Angle</span>
+                            <strong id="angle">—</strong>
+                        </div>
+
+                        <!-- POLARITY -->
+                        <div>
+                            <span>Polarity</span>
+                            <strong id="polarity">—</strong>
+                        </div>
+
+                        <!-- ELECTRON DOMAINS -->
+                        <div>
+                            <span>Electron Domains</span>
+                            <strong id="domains">—</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 MOLECULE SIDEBAR
+            ============================================== -->
+            <aside class="sidebar">
+
+                <!-- SIDEBAR HEADER -->
+                <div class="sidebarHeader">
+
+                    <h2>All Molecules</h2>
+
+                    <p>
+                        Select a molecule to view its structure.
+                    </p>
+
+                </div>
+
+
+                <!-- SEARCH -->
+                <div class="searchBox">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search molecule..."
+                        autocomplete="off"
+                        oninput="searchMolecules()"
+                    >
+
+                </div>
+
+
+                <!-- CATEGORIES -->
+                <div class="categories">
+
+                    <button
+                        type="button"
+                        class="category active"
+                        onclick="filterCategory('All', this)"
+                    >
+                        All Molecules
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category"
+                        onclick="filterCategory('Inorganic', this)"
+                    >
+                        Inorganic
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category"
+                        onclick="filterCategory('Organic', this)"
+                    >
+                        Organic
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category"
+                        onclick="filterCategory('Acids', this)"
+                    >
+                        Acids
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category"
+                        onclick="filterCategory('Bases', this)"
+                    >
+                        Bases
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category"
+                        onclick="filterCategory('Gases', this)"
+                    >
+                        Gases
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category"
+                        onclick="filterCategory('Ions', this)"
+                    >
+                        Ions
+                    </button>
+
+                </div>
+
+
+                <!-- MOLECULE COUNT -->
+                <div class="moleculeCount">
+
+                    <span id="moleculeCount">0</span>
+                    molecules
+
+                </div>
+
+
+                <!-- MOLECULE LIST -->
+                <div
+                    id="moleculeList"
+                    class="moleculeList"
+                ></div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- =================================================
+             PERIODIC TABLE LEGEND
+        ================================================== -->
+        <div class="periodic-legend">
+
+            <div class="legend-item">
+                <span class="legend-color legend-alkali"></span>
+                Alkali Metals
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color legend-alkaline"></span>
+                Alkaline Earth
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color legend-transition"></span>
+                Transition Metals
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color legend-post"></span>
+                Post-Transition
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color legend-metalloid"></span>
+                Metalloids
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color legend-nonmetal"></span>
+                Nonmetals
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color legend-noble"></span>
+                Noble Gases
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color legend-lanthanide"></span>
+                Lanthanides
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color legend-actinide"></span>
+                Actinides
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BOND MAKER
+        ================================================== -->
+        <section class="bondMakerTab">
+
+            <!-- BOND MAKER HEADER -->
+            <div
+                class="bondMakerHeader"
+                onclick="toggleBondMaker()"
+                role="button"
+                tabindex="0"
+            >
+
+                <h2>⚛ Bond Maker</h2>
+
+                <span id="bondMakerArrow">
+                    ▼
+                </span>
+
+            </div>
+
+
+            <!-- BOND MAKER CONTENT -->
+            <div
+                id="bondMakerContent"
+                class="bondMakerContent"
+            >
+
+                <!-- ATOM BUTTONS -->
+                <div class="bondMakerControls">
+
+                    <button
+                        type="button"
+                        onclick="addAtom('C')"
+                    >
+                        + C
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="addAtom('H')"
+                    >
+                        + H
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="addAtom('O')"
+                    >
+                        + O
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="addAtom('N')"
+                    >
+                        + N
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="addAtom('Cl')"
+                    >
+                        + Cl
+                    </button>
+
+                </div>
+
+
+                <!-- ACTION BUTTONS -->
+                <div class="bondMakerActions">
+
+                    <button
+                        type="button"
+                        onclick="clearBondMaker()"
+                    >
+                        Clear
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="createBond()"
+                    >
+                        Create Bond
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PERIODIC TABLE
+        ================================================== -->
+        <section
+            id="periodicPage"
+            class="hidden"
+        >
+
+            <!-- PERIODIC TABLE HEADER -->
+            <div class="periodicHeader">
+
+                <h2>
+                    Interactive Periodic Table
+                </h2>
+
+                <p>
+                    Select an element to view its atomic properties.
+                </p>
+
+            </div>
+
+
+            <!-- PERIODIC TABLE -->
+            <div id="periodicTable"></div>
+
+
+            <!-- ELEMENT INFORMATION -->
+            <div
+                id="elementInfo"
+                class="elementInfo"
+            >
+
+                <h2>
+                    Select an element
+                </h2>
+
+                <div id="elementDetails">
+                    Click any element above.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+    <script src="script.js"></script>
+
+</body>
+</html>

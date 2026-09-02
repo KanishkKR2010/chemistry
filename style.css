@@ -1,0 +1,1071 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f4f7f6;
+  color: #0a0a0a;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+
+/* =========================
+ TOP BAR
+========================= */
+
+.topbar {
+  height: 72px;
+  border-bottom: 1px solid #183b2b;
+  background: #eff4f2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 25px;
+
+  position: relative;
+  z-index: 20;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoIcon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: #0c2419;
+  border: 1px solid #25c77a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #3cff9b;
+  font-size: 25px;
+}
+
+.logo h1 {
+  font-size: 20px;
+}
+
+.logo span {
+  color: #6e9180;
+  font-size: 11px;
+}
+
+.topActions {
+  display: flex;
+  gap: 10px;
+}
+
+.topActions button,
+.viewerControls button {
+  background: #0b1912;
+  color: #dfffee;
+
+  border: 1px solid #214b36;
+
+  padding: 9px 15px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.topActions button:hover,
+.viewerControls button:hover {
+  background: #123322;
+  border-color: #31e88b;
+}
+
+
+/* =========================
+ MAIN
+========================= */
+
+main {
+  height: calc(100vh - 72px);
+}
+
+#moleculePage {
+  height: 100%;
+  display: flex;
+}
+
+
+/* =========================
+ SIDEBAR
+========================= */
+
+.sidebar {
+  width: 310px;
+
+  background: #07100c;
+
+  border-right: 1px solid #183b2b;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.searchBox {
+  padding: 17px;
+}
+
+.searchBox input {
+  width: 100%;
+
+  background: #0a1710;
+
+  color: white;
+
+  border: 1px solid #214b36;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  outline: none;
+}
+
+.searchBox input:focus {
+  border-color: #31e88b;
+}
+
+.categories {
+  padding: 0 15px 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.category {
+  background: #0b1711;
+  color: #9bb8a8;
+
+  border: 1px solid #1c392a;
+
+  border-radius: 7px;
+
+  padding: 7px 10px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+.category:hover,
+.category.active {
+  background: #123522;
+  color: #3cff9b;
+
+  border-color: #2ccf7a;
+}
+
+.moleculeCount {
+  padding: 5px 17px;
+
+  color: #6d8d7b;
+
+  font-size: 12px;
+}
+
+.moleculeList {
+  overflow-y: auto;
+
+  padding: 8px 10px;
+
+  flex: 1;
+}
+
+.moleculeItem {
+  padding: 13px;
+
+  margin-bottom: 5px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  border: 1px solid transparent;
+}
+
+.moleculeItem:hover {
+  background: #0c1e14;
+  border-color: #1c4931;
+}
+
+.moleculeItem.selected {
+  background: #10291b;
+  border-color: #2ccf7a;
+}
+
+.moleculeItem strong {
+  display: block;
+
+  color: #eafff3;
+
+  font-size: 14px;
+}
+
+.moleculeItem span {
+  color: #668473;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+ VIEWER
+========================= */
+
+.viewerArea {
+  flex: 1;
+
+  position: relative;
+
+  background:
+      radial-gradient(
+          circle at center,
+          #0d2117 0%,
+          #07100c 45%,
+          #030605 100%
+      );
+}
+
+#viewer {
+  position: absolute;
+
+  inset: 0;
+}
+
+#viewer canvas {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block;
+}
+
+
+/* =========================
+ CONTROLS
+========================= */
+
+.viewerControls {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  display: flex;
+
+  gap: 7px;
+
+  z-index: 5;
+}
+
+.viewerControls button {
+  backdrop-filter: blur(10px);
+
+  background: rgba(5, 15, 10, 0.85);
+}
+
+
+/* =========================
+ INFO PANEL
+========================= */
+
+.moleculeInfo {
+  position: absolute;
+
+  bottom: 20px;
+  left: 20px;
+
+  width: min(600px, calc(100% - 40px));
+
+  padding: 20px;
+
+  background: rgba(5, 13, 9, 0.91);
+
+  border: 1px solid #214b36;
+
+  border-radius: 14px;
+
+  backdrop-filter: blur(15px);
+
+  z-index: 5;
+}
+
+.moleculeInfo h2 {
+  font-size: 21px;
+}
+
+.formula {
+  color: #36e98d;
+
+  font-size: 22px;
+
+  margin: 5px 0 18px;
+}
+
+.infoGrid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 10px;
+}
+
+.infoGrid div {
+  background: #0b1710;
+
+  border: 1px solid #183b2a;
+
+  padding: 10px;
+
+  border-radius: 8px;
+}
+
+.infoGrid span {
+  display: block;
+
+  font-size: 10px;
+
+  color: #668473;
+
+  margin-bottom: 5px;
+}
+
+.infoGrid strong {
+  font-size: 12px;
+
+  color: #d9f7e6;
+}
+
+
+/* =========================
+ PERIODIC TABLE
+========================= */
+
+#periodicPage {
+  height: 100%;
+
+  overflow: auto;
+
+  padding: 35px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.periodicHeader {
+  margin-bottom: 25px;
+}
+
+.periodicHeader h2 {
+  font-size: 28px;
+}
+
+.periodicHeader p {
+  color: #759586;
+
+  margin-top: 5px;
+}
+
+#periodicTable {
+  display: grid;
+
+  grid-template-columns: repeat(18, minmax(45px, 1fr));
+
+  gap: 5px;
+
+  max-width: 1250px;
+
+  margin: auto;
+}
+
+.element {
+  min-height: 62px;
+
+  border: 1px solid #234a35;
+
+  background: #0a1710;
+
+  border-radius: 6px;
+
+  padding: 5px;
+
+  cursor: pointer;
+
+  transition: 0.15s;
+}
+
+.element:hover {
+  transform: translateY(-3px);
+
+  border-color: #39ed91;
+
+  background: #123522;
+}
+
+.element .number {
+  font-size: 9px;
+
+  color: #6f8c7c;
+}
+
+.element .symbol {
+  font-size: 18px;
+
+  font-weight: bold;
+
+  color: #3cff9b;
+}
+
+.element .name {
+  font-size: 8px;
+
+  color: #91aa9d;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+}
+
+.elementInfo {
+  max-width: 1250px;
+
+  margin: 25px auto;
+
+  padding: 20px;
+
+  border: 1px solid #214b36;
+
+  border-radius: 12px;
+
+  background: #08130d;
+}
+
+#elementDetails {
+  color: #93a99d;
+
+  margin-top: 10px;
+}
+
+
+/* =========================
+ SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050a07;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #204d35;
+
+  border-radius: 10px;
+}
+
+
+/* =========================
+ MOBILE
+========================= */
+
+@media(max-width: 800px) {
+
+  .sidebar {
+      width: 230px;
+  }
+
+  .infoGrid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  #periodicTable {
+      grid-template-columns: repeat(9, 55px);
+      justify-content: start;
+  }
+
+}
+/* =========================================
+   BOND MAKER TAB
+========================================= */
+
+.bondMakerTab {
+  width: 100%;
+  background: #07100c;
+  border-bottom: 1px solid #183b2b;
+  flex-shrink: 0;
+}
+
+
+/* Header */
+
+.bondMakerHeader {
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  cursor: pointer;
+
+  background: #08150e;
+}
+
+.bondMakerHeader h2 {
+  color: #eafff3;
+  font-size: 17px;
+}
+
+#bondMakerArrow {
+  color: #3cff9b;
+  font-size: 14px;
+}
+
+
+/* Dropdown content */
+
+.bondMakerContent {
+  display: none;
+
+  padding: 15px 20px;
+
+  border-top: 1px solid #183b2b;
+}
+
+.bondMakerContent.open {
+  display: block;
+}
+
+
+/* Atom buttons */
+
+.bondMakerControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bondMakerControls button,
+.bondMakerActions button {
+
+  background: #0b1711;
+
+  color: #9bb8a8;
+
+  border: 1px solid #1c392a;
+
+  border-radius: 7px;
+
+  padding: 8px 14px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+.bondMakerControls button:hover,
+.bondMakerActions button:hover {
+
+  background: #123522;
+
+  color: #3cff9b;
+
+  border-color: #2ccf7a;
+}
+
+
+/* Actions */
+
+.bondMakerActions {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 11px;
+
+  background: #0d1e14;
+  border: 1px solid #294c38;
+  border-radius: 7px;
+
+  color: #cdebd9;
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.checkRow:hover {
+  border-color: #3cff9b;
+  color: #3cff9b;
+}
+
+.checkRow input {
+  width: 16px;
+  height: 16px;
+
+  accent-color: #3cff9b;
+
+  cursor: pointer;
+}
+.topbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 18px 28px;
+    min-height: 72px;
+    background: rgba(3, 18, 11, 0.82);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(57, 255, 154, 0.18);
+}
+
+/* LEFT SIDE HOME BUTTON */
+.backBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 10px 18px;
+    border: 1px solid rgba(57, 255, 154, 0.35);
+    border-radius: 999px;
+
+    background: rgba(57, 255, 154, 0.08);
+    color: #baffda;
+
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.backBtn:hover {
+    transform: translateX(-3px);
+    background: rgba(57, 255, 154, 0.18);
+    color: #ffffff;
+    box-shadow:
+        0 0 20px rgba(57, 255, 154, 0.25),
+        inset 0 0 12px rgba(255, 255, 255, 0.04);
+}
+
+/* LOGO */
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    color: #f5fff9;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #7fffb8;
+    font-weight: 600;
+}
+/* =====================================================
+   TEXT SELECTION
+===================================================== */
+
+::selection {
+    background:
+        rgba(57,255,154,.28);
+
+    color: white;
+}
+/* =========================================================
+   COMMON MOLECULAR LAB NAVIGATION
+========================================================= */
+
+.site-header {
+  height: 70px;
+  width: 100%;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+  gap: 18px;
+
+  background:
+      linear-gradient(
+          90deg,
+          #030604,
+          #07120b,
+          #030604
+      );
+
+  border-bottom: 1px solid rgba(57,255,136,.25);
+
+  box-shadow:
+      0 5px 30px rgba(0,0,0,.45),
+      0 0 25px rgba(57,255,136,.04);
+
+  position: relative;
+  z-index: 9999;
+}
+
+
+/* =========================================================
+ BACK BUTTON
+========================================================= */
+
+.back-btn {
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid rgba(57,255,136,.25);
+  border-radius: 9px;
+
+  background: rgba(57,255,136,.04);
+
+  color: #39ff88;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: .25s ease;
+}
+
+.back-btn:hover {
+  background: #39ff88;
+  color: #031006;
+
+  transform: translateX(-3px);
+
+  box-shadow:
+      0 0 18px rgba(57,255,136,.35);
+}
+
+
+/* =========================================================
+ LOGO
+========================================================= */
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  text-decoration: none;
+
+  min-width: 210px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  color: #39ff88;
+
+  background:
+      linear-gradient(
+          145deg,
+          #102819,
+          #061009
+      );
+
+  border: 1px solid rgba(57,255,136,.35);
+
+  box-shadow:
+      0 0 18px rgba(57,255,136,.12);
+}
+
+.logo-title {
+  color: #effff3;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+.logo-subtitle {
+  margin-top: 3px;
+
+  color: #617568;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+ NAVIGATION
+========================================================= */
+
+.main-nav {
+  height: 100%;
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+}
+
+.nav-link {
+  height: 100%;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  color: #718579;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  transition:
+      color .2s ease,
+      background .2s ease;
+}
+
+
+/* GREEN LINE */
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  width: 0;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: #39ff88;
+
+  box-shadow:
+      0 0 10px #39ff88;
+
+  transition: width .25s ease;
+}
+
+
+/* HOVER */
+
+.nav-link:hover {
+  color: #effff3;
+
+  background:
+      rgba(57,255,136,.035);
+}
+
+.nav-link:hover::after {
+  width: 55%;
+}
+
+
+/* ACTIVE PAGE */
+
+.nav-link.active {
+  color: #39ff88;
+}
+
+.nav-link.active::after {
+  width: 70%;
+}
+
+
+/* =========================================================
+ LAB STATUS
+========================================================= */
+
+.lab-status {
+  min-width: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 7px;
+
+  color: #718579;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.status-light {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #39ff88;
+
+  box-shadow:
+      0 0 7px #39ff88,
+      0 0 15px rgba(57,255,136,.6);
+
+  animation: pulseStatus 2s infinite;
+}
+
+@keyframes pulseStatus {
+
+  0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+
+  50% {
+      opacity: .4;
+      transform: scale(.7);
+  }
+}
+
+
+/* =========================================================
+ TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .site-header {
+      padding: 0 14px;
+      gap: 10px;
+  }
+
+  .site-logo {
+      min-width: 180px;
+  }
+
+  .nav-link {
+      padding: 0 8px;
+      font-size: 9px;
+  }
+
+  .lab-status {
+      min-width: 85px;
+  }
+}
+
+
+/* =========================================================
+ MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .site-header {
+      height: 62px;
+  }
+
+  .logo-subtitle {
+      display: none;
+  }
+
+  .logo-title {
+      font-size: 12px;
+  }
+
+  .logo-icon {
+      width: 34px;
+      height: 34px;
+  }
+
+  .back-btn {
+      width: 34px;
+      height: 34px;
+  }
+
+  .nav-link {
+      padding: 0 6px;
+      font-size: 7px;
+  }
+
+  .lab-status {
+      display: none;
+  }
+}
+
+
+/* =========================================================
+ SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .site-header {
+      padding: 0 8px;
+      gap: 7px;
+  }
+
+  .site-logo {
+      min-width: auto;
+  }
+
+  .logo-title {
+      display: none;
+  }
+
+  .main-nav {
+      justify-content: flex-end;
+  }
+
+  .nav-link {
+      padding: 0 5px;
+      font-size: 6.5px;
+  }
+}

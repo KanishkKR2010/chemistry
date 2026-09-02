@@ -1,0 +1,2675 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Polarity & Dipole Moment Lab</title>
+
+<style>
+/* =========================================================
+   MOLECULAR LAB — BLACK + GREEN THEME
+========================================================= */
+/* =========================================================
+   COMMON MOLECULAR LAB NAVIGATION
+========================================================= */
+
+.site-header {
+    height: 70px;
+    width: 100%;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 24px;
+    gap: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #030604,
+            #07120b,
+            #030604
+        );
+
+    border-bottom: 1px solid rgba(57,255,136,.25);
+
+    box-shadow:
+        0 5px 30px rgba(0,0,0,.45),
+        0 0 25px rgba(57,255,136,.04);
+
+    position: relative;
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-btn {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(57,255,136,.25);
+    border-radius: 9px;
+
+    background: rgba(57,255,136,.04);
+
+    color: #39ff88;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .25s ease;
+}
+
+.back-btn:hover {
+    background: #39ff88;
+    color: #031006;
+
+    transform: translateX(-3px);
+
+    box-shadow:
+        0 0 18px rgba(57,255,136,.35);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    text-decoration: none;
+
+    min-width: 210px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+
+    color: #39ff88;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102819,
+            #061009
+        );
+
+    border: 1px solid rgba(57,255,136,.35);
+
+    box-shadow:
+        0 0 18px rgba(57,255,136,.12);
+}
+
+.logo-title {
+    color: #effff3;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 1.7px;
+}
+
+.logo-subtitle {
+    margin-top: 3px;
+
+    color: #617568;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-nav {
+    height: 100%;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+}
+
+.nav-link {
+    height: 100%;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    color: #718579;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition:
+        color .2s ease,
+        background .2s ease;
+}
+
+
+/* GREEN LINE */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 0;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background: #39ff88;
+
+    box-shadow:
+        0 0 10px #39ff88;
+
+    transition: width .25s ease;
+}
+
+
+/* HOVER */
+
+.nav-link:hover {
+    color: #effff3;
+
+    background:
+        rgba(57,255,136,.035);
+}
+
+.nav-link:hover::after {
+    width: 55%;
+}
+
+
+/* ACTIVE PAGE */
+
+.nav-link.active {
+    color: #39ff88;
+}
+
+.nav-link.active::after {
+    width: 70%;
+}
+
+
+/* =========================================================
+   LAB STATUS
+========================================================= */
+
+.lab-status {
+    min-width: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    color: #718579;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.status-light {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #39ff88;
+
+    box-shadow:
+        0 0 7px #39ff88,
+        0 0 15px rgba(57,255,136,.6);
+
+    animation: pulseStatus 2s infinite;
+}
+
+@keyframes pulseStatus {
+
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .4;
+        transform: scale(.7);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .site-header {
+        padding: 0 14px;
+        gap: 10px;
+    }
+
+    .site-logo {
+        min-width: 180px;
+    }
+
+    .nav-link {
+        padding: 0 8px;
+        font-size: 9px;
+    }
+
+    .lab-status {
+        min-width: 85px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .site-header {
+        height: 62px;
+    }
+
+    .logo-subtitle {
+        display: none;
+    }
+
+    .logo-title {
+        font-size: 12px;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .back-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .nav-link {
+        padding: 0 6px;
+        font-size: 7px;
+    }
+
+    .lab-status {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        padding: 0 8px;
+        gap: 7px;
+    }
+
+    .site-logo {
+        min-width: auto;
+    }
+
+    .logo-title {
+        display: none;
+    }
+
+    .main-nav {
+        justify-content: flex-end;
+    }
+
+    .nav-link {
+        padding: 0 5px;
+        font-size: 6.5px;
+    }
+}
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Inter,Arial,sans-serif;
+    background:#050806;
+    color:#eaffef;
+}
+
+body{
+    background:
+        radial-gradient(circle at 75% 20%,rgba(0,255,120,.08),transparent 30%),
+        radial-gradient(circle at 20% 80%,rgba(0,255,120,.05),transparent 28%),
+        #050806;
+}
+
+.app{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top{
+    height:68px;
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    padding:0 24px;
+
+    background:
+        linear-gradient(90deg,#07110b,#0a1710 55%,#07110b);
+
+    border-bottom:1px solid rgba(65,255,137,.25);
+
+    box-shadow:
+        0 0 25px rgba(0,255,120,.06),
+        0 1px 0 rgba(255,255,255,.03);
+}
+
+.top h1{
+    margin:0;
+    font-size:21px;
+    font-weight:800;
+    letter-spacing:-.4px;
+}
+
+.top h1::first-letter{
+    color:#39ff88;
+}
+
+.top small{
+    color:#7d9686;
+    font-size:12px;
+    letter-spacing:.5px;
+}
+
+.brand-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#39ff88;
+
+    box-shadow:
+        0 0 8px #39ff88,
+        0 0 20px rgba(57,255,136,.7);
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:.55;
+        transform:scale(.75);
+    }
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main{
+    flex:1;
+    display:flex;
+    min-height:0;
+}
+
+/* =========================================================
+   LEFT PANEL
+========================================================= */
+
+.panel{
+    width:340px;
+    flex-shrink:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(10,20,14,.98),
+            rgba(5,12,8,.98)
+        );
+
+    border-right:1px solid rgba(57,255,136,.18);
+
+    padding:18px;
+
+    overflow:auto;
+
+    box-shadow:
+        8px 0 35px rgba(0,0,0,.35);
+}
+
+.panel::-webkit-scrollbar{
+    width:5px;
+}
+
+.panel::-webkit-scrollbar-track{
+    background:#050906;
+}
+
+.panel::-webkit-scrollbar-thumb{
+    background:#174d2b;
+    border-radius:10px;
+}
+
+.panel::-webkit-scrollbar-thumb:hover{
+    background:#2cff78;
+}
+
+.section{
+    border-bottom:1px solid rgba(110,255,160,.10);
+    padding-bottom:17px;
+    margin-bottom:17px;
+}
+
+.section:last-child{
+    border-bottom:none;
+}
+
+.panel h2{
+    margin:0 0 11px;
+
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+
+    color:#8aa393;
+}
+
+.panel h2::before{
+    content:"";
+    display:inline-block;
+
+    width:5px;
+    height:5px;
+
+    margin-right:7px;
+    margin-bottom:2px;
+
+    border-radius:50%;
+    background:#39ff88;
+
+    box-shadow:0 0 7px #39ff88;
+}
+
+/* =========================================================
+   MOLECULE BUTTONS
+========================================================= */
+
+.molecules{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.molbtn{
+    position:relative;
+
+    padding:11px 8px;
+
+    border:1px solid #193c27;
+    background:
+        linear-gradient(145deg,#0c1710,#08100b);
+
+    color:#b8cdbd;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:800;
+    font-size:13px;
+
+    transition:
+        .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+.molbtn:hover{
+    color:#eaffef;
+    border-color:#2be875;
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 0 14px rgba(43,232,117,.13);
+}
+
+.molbtn.active{
+    color:#061009;
+
+    background:
+        linear-gradient(135deg,#39ff88,#18d866);
+
+    border-color:#39ff88;
+
+    box-shadow:
+        0 0 15px rgba(57,255,136,.35),
+        inset 0 0 10px rgba(255,255,255,.12);
+}
+
+/* =========================================================
+   ROWS
+========================================================= */
+
+.row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin:11px 0;
+
+    font-size:13px;
+    color:#b2c2b7;
+}
+
+.row span{
+    transition:.2s;
+}
+
+.row:hover span{
+    color:#eaffef;
+}
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+input[type=checkbox]{
+    appearance:none;
+
+    width:36px;
+    height:19px;
+
+    border:1px solid #31513c;
+    border-radius:20px;
+
+    background:#0a120d;
+
+    position:relative;
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+input[type=checkbox]::after{
+    content:"";
+
+    position:absolute;
+
+    width:13px;
+    height:13px;
+
+    top:2px;
+    left:2px;
+
+    border-radius:50%;
+
+    background:#627368;
+
+    transition:.25s;
+}
+
+input[type=checkbox]:checked{
+    background:#164c2b;
+    border-color:#39ff88;
+
+    box-shadow:
+        0 0 10px rgba(57,255,136,.18);
+}
+
+input[type=checkbox]:checked::after{
+    left:19px;
+    background:#39ff88;
+
+    box-shadow:0 0 7px #39ff88;
+}
+
+/* =========================================================
+   RANGE
+========================================================= */
+
+input[type=range]{
+    width:150px;
+    accent-color:#39ff88;
+    cursor:pointer;
+}
+
+/* =========================================================
+   RESET BUTTON
+========================================================= */
+
+.btn{
+    width:100%;
+
+    padding:10px;
+
+    border:1px solid #2ee878;
+    border-radius:7px;
+
+    background:
+        linear-gradient(135deg,#123d24,#0b2918);
+
+    color:#bfffd4;
+
+    font-weight:800;
+    font-size:12px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    box-shadow:
+        0 0 12px rgba(57,255,136,.06);
+}
+
+.btn:hover{
+    background:
+        linear-gradient(135deg,#1a6134,#0e3b20);
+
+    color:white;
+
+    box-shadow:
+        0 0 18px rgba(57,255,136,.22);
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error{
+    color:#ff8585;
+
+    background:
+        rgba(110,20,20,.15);
+
+    border:1px solid rgba(255,80,80,.3);
+
+    border-radius:8px;
+
+    padding:9px;
+
+    font-size:12px;
+
+    margin-top:10px;
+
+    display:none;
+}
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.metric{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+    margin-top:10px;
+}
+
+.metric div{
+    background:
+        linear-gradient(145deg,#0d1711,#08100b);
+
+    border:1px solid #173b25;
+
+    border-radius:7px;
+
+    padding:9px;
+
+    color:#81998a;
+
+    font-size:11px;
+}
+
+.metric b{
+    display:block;
+
+    font-size:16px;
+
+    margin-top:4px;
+
+    color:#55ff97;
+}
+
+.hint{
+    font-size:12px;
+    color:#718579;
+
+    line-height:1.5;
+}
+
+.hint b{
+    color:#a8c5b0;
+}
+
+/* =========================================================
+   STAGE
+========================================================= */
+
+.stage{
+    flex:1;
+
+    position:relative;
+
+    min-width:0;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(35,255,125,.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            #0a140e 0,
+            #050906 62%,
+            #020403 100%
+        );
+}
+
+/* GRID EFFECT */
+
+.stage::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.22;
+
+    background-image:
+        linear-gradient(rgba(55,255,130,.045) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(55,255,130,.045) 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    mask-image:
+        radial-gradient(circle at center,black,transparent 75%);
+}
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+.canvas{
+    position:absolute;
+    inset:0;
+    z-index:1;
+}
+
+/* =========================================================
+   HUD
+========================================================= */
+
+.hud{
+    position:absolute;
+
+    left:20px;
+    top:18px;
+
+    min-width:225px;
+
+    padding:14px 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9,22,14,.92),
+            rgba(5,12,8,.82)
+        );
+
+    border:1px solid rgba(57,255,136,.25);
+
+    border-radius:10px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35),
+        0 0 20px rgba(57,255,136,.04);
+
+    backdrop-filter:blur(10px);
+
+    z-index:5;
+}
+
+.formula{
+    font-size:27px;
+    font-weight:900;
+
+    color:#effff3;
+
+    letter-spacing:.5px;
+}
+
+.classification{
+    margin-top:5px;
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:1.3px;
+}
+
+.polar{
+    color:#ff6464;
+
+    text-shadow:
+        0 0 10px rgba(255,70,70,.25);
+}
+
+.nonpolar{
+    color:#39ff88;
+
+    text-shadow:
+        0 0 10px rgba(57,255,136,.3);
+}
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.legend{
+    position:absolute;
+
+    right:20px;
+    top:18px;
+
+    padding:11px 13px;
+
+    background:
+        rgba(7,15,10,.88);
+
+    border:1px solid rgba(57,255,136,.2);
+
+    border-radius:9px;
+
+    color:#9bb3a2;
+
+    font-size:11px;
+
+    z-index:5;
+
+    backdrop-filter:blur(8px);
+}
+
+.dot{
+    display:inline-block;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    margin-right:5px;
+
+    vertical-align:middle;
+}
+
+.red{
+    background:#ff4d58;
+
+    box-shadow:
+        0 0 8px rgba(255,77,88,.6);
+}
+
+.blue{
+    background:#4f91ff;
+
+    box-shadow:
+        0 0 8px rgba(79,145,255,.6);
+}
+
+/* =========================================================
+   BOTTOM INFO
+========================================================= */
+
+.bottom{
+    position:absolute;
+
+    left:18px;
+    right:18px;
+    bottom:17px;
+
+    display:flex;
+    justify-content:center;
+
+    pointer-events:none;
+
+    z-index:5;
+}
+
+.info{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9,22,14,.94),
+            rgba(4,11,7,.9)
+        );
+
+    border:1px solid rgba(57,255,136,.2);
+
+    border-radius:11px;
+
+    padding:11px 16px;
+
+    max-width:780px;
+
+    text-align:center;
+
+    color:#a9bcae;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.35);
+
+    backdrop-filter:blur(10px);
+
+    font-size:12px;
+
+    line-height:1.45;
+}
+
+.info::before{
+    content:"◈ ";
+
+    color:#39ff88;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:800px){
+
+    .panel{
+        width:275px;
+        padding:14px;
+    }
+
+    .top h1{
+        font-size:17px;
+    }
+
+    .top small{
+        display:none;
+    }
+
+    .legend{
+        display:none;
+    }
+
+    .hud{
+        left:12px;
+        top:12px;
+    }
+
+    .bottom{
+        left:10px;
+        right:10px;
+        bottom:10px;
+    }
+}
+
+@media(max-width:600px){
+
+    .panel{
+        width:235px;
+    }
+
+    .molecules{
+        grid-template-columns:1fr;
+    }
+
+    .formula{
+        font-size:22px;
+    }
+
+    .metric{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+    <header class="site-header">
+
+        <!-- LEFT: BACK BUTTON -->
+        <button class="back-btn" onclick="history.back()" title="Go Back">
+            ←
+        </button>
+    
+        <!-- LOGO / TITLE -->
+        <a href="index.html" class="site-logo">
+            <div class="logo-icon">⚗</div>
+    
+            <div>
+                <div class="logo-title">MOLECULAR LAB</div>
+                <div class="logo-subtitle">INTERACTIVE CHEMISTRY</div>
+            </div>
+        </a>
+    
+        <!-- NAVIGATION -->
+        <nav class="main-nav">
+            <a href="home.html" class="nav-link">
+                HOME
+            </a>
+    
+            <a href="shapes.html" class="nav-link">
+                Shapes
+            </a>
+    
+            <a href="bond.html" class="nav-link">
+                BONDING
+            </a>
+    
+            <a href="polar.html" class="nav-link active">
+                POLARITY
+            </a>
+    
+            <a href="periodic.html" class="nav-link">
+                PERIODIC TABLE
+            </a>
+    
+        </nav>
+    
+        <!-- RIGHT STATUS -->
+        <div class="lab-status">
+            <span class="status-light"></span>
+            LAB ONLINE
+        </div>
+    
+    </header>
+
+<div class="main">
+
+<!-- =====================================================
+     LEFT CONTROL PANEL
+===================================================== -->
+
+<aside class="panel">
+
+    <div class="section">
+
+        <h2>Molecule</h2>
+
+        <div class="molecules" id="molecules"></div>
+
+        <div class="error" id="error"></div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>Display</h2>
+
+        <label class="row">
+            <span>Show bond dipoles</span>
+            <input id="showBond" type="checkbox" checked>
+        </label>
+
+        <label class="row">
+            <span>Show molecular dipole</span>
+            <input id="showMol" type="checkbox" checked>
+        </label>
+
+        <label class="row">
+            <span>Show partial charges</span>
+            <input id="showCharge" type="checkbox" checked>
+        </label>
+
+        <label class="row">
+            <span>Show bond angles</span>
+            <input id="showAngles" type="checkbox">
+        </label>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>Simulation</h2>
+
+        <label class="row">
+            <span>Dipole scale</span>
+            <input
+                id="dipScale"
+                type="range"
+                min="0.5"
+                max="2.5"
+                step="0.1"
+                value="1"
+            >
+        </label>
+
+        <label class="row">
+            <span>Animation</span>
+            <input id="animate" type="checkbox" checked>
+        </label>
+
+        <button class="btn" id="reset">
+            ↻ RESET VIEW
+        </button>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>Results</h2>
+
+        <div id="results"></div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>How it works</h2>
+
+        <div class="hint">
+            Each bond has a dipole caused by electronegativity
+            difference. The molecular dipole is the vector sum
+            of all bond dipoles.
+            <br><br>
+            A symmetric molecule can have polar bonds but still
+            have a zero net dipole.
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     3D STAGE
+===================================================== -->
+
+<main class="stage">
+
+    <div id="canvas" class="canvas"></div>
+
+
+    <div class="hud">
+
+        <div class="formula" id="formula"></div>
+
+        <div
+            id="classification"
+            class="classification">
+        </div>
+
+    </div>
+
+
+    <div class="legend">
+
+        <span class="dot blue"></span>
+        δ⁺
+
+        &nbsp;&nbsp;
+
+        <span class="dot red"></span>
+        δ⁻
+
+        &nbsp;&nbsp;
+
+        ➜ bond dipole
+
+    </div>
+
+
+    <div class="bottom">
+
+        <div class="info" id="explanation"></div>
+
+    </div>
+
+</main>
+
+</div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script>
+
+/* =========================================================
+   MOLECULE DATA
+========================================================= */
+
+const molecules = {
+
+    HCl:{
+        name:'Hydrogen chloride',
+        formula:'HCl',
+        central:'Cl',
+
+        atoms:[
+            ['H',[-1.45,0,0]],
+            ['Cl',[1.45,0,0]]
+        ],
+
+        bonds:[[0,1]],
+
+        angles:[],
+
+        mu:1.08,
+        polar:true,
+
+        reason:
+        'One polar H–Cl bond gives a non-zero molecular dipole.'
+    },
+
+
+    H2O:{
+        name:'Water',
+        formula:'H₂O',
+        central:'O',
+
+        atoms:[
+            ['O',[0,0,0]],
+            ['H',[-1.25,0.82,0]],
+            ['H',[1.25,0.82,0]]
+        ],
+
+        bonds:[
+            [0,1],
+            [0,2]
+        ],
+
+        angles:[
+            ['H–O–H',104.5]
+        ],
+
+        mu:1.85,
+        polar:true,
+
+        reason:
+        'The O–H bond dipoles do not cancel because water is bent.'
+    },
+
+
+    CO2:{
+        name:'Carbon dioxide',
+        formula:'CO₂',
+        central:'C',
+
+        atoms:[
+            ['C',[0,0,0]],
+            ['O',[-1.55,0,0]],
+            ['O',[1.55,0,0]]
+        ],
+
+        bonds:[
+            [0,1],
+            [0,2]
+        ],
+
+        angles:[
+            ['O–C–O',180]
+        ],
+
+        mu:0,
+        polar:false,
+
+        reason:
+        'The two equal C=O dipoles point in opposite directions and cancel.'
+    },
+
+
+    NH3:{
+        name:'Ammonia',
+        formula:'NH₃',
+        central:'N',
+
+        atoms:[
+            ['N',[0,0,0]],
+            ['H',[-1.25,-0.7,0]],
+            ['H',[1.25,-0.7,0]],
+            ['H',[0,0.8,1.15]]
+        ],
+
+        bonds:[
+            [0,1],
+            [0,2],
+            [0,3]
+        ],
+
+        angles:[
+            ['H–N–H',107]
+        ],
+
+        mu:1.47,
+        polar:true,
+
+        reason:
+        'NH₃ is trigonal pyramidal, so the N–H dipoles add to a net dipole.'
+    },
+
+
+    CH4:{
+        name:'Methane',
+        formula:'CH₄',
+        central:'C',
+
+        atoms:[
+            ['C',[0,0,0]],
+            ['H',[1,1,1]],
+            ['H',[-1,-1,1]],
+            ['H',[-1,1,-1]],
+            ['H',[1,-1,-1]]
+        ],
+
+        bonds:[
+            [0,1],
+            [0,2],
+            [0,3],
+            [0,4]
+        ],
+
+        angles:[
+            ['H–C–H',109.5]
+        ],
+
+        mu:0,
+        polar:false,
+
+        reason:
+        'Tetrahedral symmetry makes the four C–H bond dipoles cancel.'
+    },
+
+
+    BF3:{
+        name:'Boron trifluoride',
+        formula:'BF₃',
+        central:'B',
+
+        atoms:[
+            ['B',[0,0,0]],
+            ['F',[1.45,0,0]],
+            ['F',[-0.72,1.25,0]],
+            ['F',[-0.72,-1.25,0]]
+        ],
+
+        bonds:[
+            [0,1],
+            [0,2],
+            [0,3]
+        ],
+
+        angles:[
+            ['F–B–F',120]
+        ],
+
+        mu:0,
+        polar:false,
+
+        reason:
+        'BF₃ is trigonal planar and symmetric; its three B–F dipoles cancel.'
+    },
+
+
+    SO2:{
+        name:'Sulfur dioxide',
+        formula:'SO₂',
+        central:'S',
+
+        atoms:[
+            ['S',[0,0,0]],
+            ['O',[-1.35,0.75,0]],
+            ['O',[1.35,0.75,0]]
+        ],
+
+        bonds:[
+            [0,1],
+            [0,2]
+        ],
+
+        angles:[
+            ['O–S–O',119]
+        ],
+
+        mu:1.63,
+        polar:true,
+
+        reason:
+        'SO₂ is bent, so the two S–O dipoles have a non-zero resultant.'
+    }
+
+};
+
+
+/* =========================================================
+   ATOM COLORS
+========================================================= */
+
+const colors = {
+
+    H:0xffffff,
+    C:0x555b58,
+    N:0x477cff,
+    O:0xff4747,
+    F:0x39e879,
+    Cl:0x42d878,
+    S:0xffc928,
+    B:0xffa866
+
+};
+
+
+/* =========================================================
+   ATOM RADII
+========================================================= */
+
+const radii = {
+
+    H:.42,
+    C:.58,
+    N:.56,
+    O:.58,
+    F:.52,
+    Cl:.68,
+    S:.65,
+    B:.55
+
+};
+
+
+/* =========================================================
+   GLOBALS
+========================================================= */
+
+let selected = 'H2O';
+
+let scene;
+let camera;
+let renderer;
+let root;
+
+let arrows=[];
+let labels=[];
+let angleObjects=[];
+
+let drag=false;
+
+let lastX=0;
+let lastY=0;
+
+let rotX=.15;
+let rotY=-.25;
+
+
+/* =========================================================
+   SHORT SELECTOR
+========================================================= */
+
+const $ = id => document.getElementById(id);
+
+
+/* =========================================================
+   MOLECULE BUTTONS
+========================================================= */
+
+function makeButtons(){
+
+    const box=$('molecules');
+
+    Object.keys(molecules).forEach(k=>{
+
+        let b=document.createElement('button');
+
+        b.className='molbtn';
+
+        b.textContent=k;
+
+        b.dataset.k=k;
+
+        b.onclick=()=>select(k);
+
+        box.appendChild(b);
+
+    });
+
+}
+
+
+/* =========================================================
+   THREE.JS INITIALIZATION
+========================================================= */
+
+function init3D(){
+
+    scene=new THREE.Scene();
+
+    camera=new THREE.PerspectiveCamera(
+        45,
+        1,
+        .1,
+        100
+    );
+
+    camera.position.set(0,0,8);
+
+
+    renderer=new THREE.WebGLRenderer({
+        antialias:true,
+        alpha:true
+    });
+
+    renderer.setPixelRatio(
+        Math.min(devicePixelRatio,2)
+    );
+
+    renderer.outputEncoding=THREE.sRGBEncoding;
+
+    $('canvas').appendChild(renderer.domElement);
+
+
+    /* Ambient light */
+
+    scene.add(
+        new THREE.AmbientLight(
+            0xffffff,
+            .8
+        )
+    );
+
+
+    /* Main light */
+
+    let light=new THREE.DirectionalLight(
+        0xffffff,
+        1
+    );
+
+    light.position.set(4,5,8);
+
+    scene.add(light);
+
+
+    /* Green rim light */
+
+    let greenLight=new THREE.PointLight(
+        0x39ff88,
+        1.5,
+        12
+    );
+
+    greenLight.position.set(
+        -3,
+        2,
+        4
+    );
+
+    scene.add(greenLight);
+
+
+    root=new THREE.Group();
+
+    scene.add(root);
+
+
+    resize();
+
+    window.addEventListener(
+        'resize',
+        resize
+    );
+
+
+    /* Mouse rotation */
+
+    renderer.domElement.addEventListener(
+        'pointerdown',
+        e=>{
+            drag=true;
+            lastX=e.clientX;
+            lastY=e.clientY;
+        }
+    );
+
+
+    window.addEventListener(
+        'pointerup',
+        ()=>{
+            drag=false;
+        }
+    );
+
+
+    window.addEventListener(
+        'pointermove',
+        e=>{
+
+            if(!drag)return;
+
+            rotY +=
+                (e.clientX-lastX)*.008;
+
+            rotX +=
+                (e.clientY-lastY)*.008;
+
+            rotX=Math.max(
+                -1.4,
+                Math.min(1.4,rotX)
+            );
+
+            lastX=e.clientX;
+            lastY=e.clientY;
+
+        }
+    );
+
+
+    /* Zoom */
+
+    renderer.domElement.addEventListener(
+        'wheel',
+        e=>{
+
+            camera.position.z=
+                Math.max(
+                    4,
+                    Math.min(
+                        14,
+                        camera.position.z+
+                        e.deltaY*.008
+                    )
+                );
+
+        },
+        {
+            passive:true
+        }
+    );
+
+
+    animateLoop();
+
+}
+
+
+/* =========================================================
+   RESIZE
+========================================================= */
+
+function resize(){
+
+    let el=$('canvas');
+
+    let w=el.clientWidth;
+    let h=el.clientHeight;
+
+    camera.aspect=w/h;
+
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(w,h);
+
+}
+
+
+/* =========================================================
+   CREATE ATOM
+========================================================= */
+
+function sphere(el,pos){
+
+    let g=new THREE.SphereGeometry(
+        radii[el],
+        32,
+        24
+    );
+
+
+    let m=new THREE.MeshStandardMaterial({
+
+        color:colors[el],
+
+        roughness:.25,
+
+        metalness:.15
+
+    });
+
+
+    let s=new THREE.Mesh(
+        g,
+        m
+    );
+
+
+    s.position.set(...pos);
+
+    root.add(s);
+
+
+    /* green glow ring around atom */
+
+    let glowGeometry=
+        new THREE.SphereGeometry(
+            radii[el]*1.06,
+            24,
+            18
+        );
+
+
+    let glowMaterial=
+        new THREE.MeshBasicMaterial({
+
+            color:0x39ff88,
+
+            transparent:true,
+
+            opacity:.035,
+
+            wireframe:true
+
+        });
+
+
+    let glow=
+        new THREE.Mesh(
+            glowGeometry,
+            glowMaterial
+        );
+
+
+    glow.position.copy(s.position);
+
+    root.add(glow);
+
+
+    return s;
+
+}
+
+
+/* =========================================================
+   BOND
+========================================================= */
+
+function bond(a,b,order=1){
+
+    let p1=new THREE.Vector3(...a);
+
+    let p2=new THREE.Vector3(...b);
+
+    let d=p2.clone().sub(p1);
+
+    let len=d.length();
+
+    let mid=
+        p1.clone()
+        .add(
+            p2
+            .clone()
+            .multiplyScalar(.5)
+        );
+
+
+    let g=
+        new THREE.CylinderGeometry(
+            .12,
+            .12,
+            len,
+            18
+        );
+
+
+    let m=
+        new THREE.MeshStandardMaterial({
+
+            color:0x31533d,
+
+            roughness:.4,
+
+            metalness:.25
+
+        });
+
+
+    let c=
+        new THREE.Mesh(g,m);
+
+
+    c.position.copy(mid);
+
+
+    c.quaternion.setFromUnitVectors(
+        new THREE.Vector3(0,1,0),
+        d.normalize()
+    );
+
+
+    root.add(c);
+
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+function arrow(
+    start,
+    end,
+    color=0x39ff88,
+    head=true
+){
+
+    let s=
+        new THREE.Vector3(...start);
+
+    let e=
+        new THREE.Vector3(...end);
+
+    let d=
+        e.clone()
+        .sub(s);
+
+    let len=d.length();
+
+
+    if(len<.01)return;
+
+
+    let a=
+        new THREE.ArrowHelper(
+            d.normalize(),
+            s,
+            len,
+            color,
+            .22,
+            .11
+        );
+
+
+    root.add(a);
+
+    arrows.push(a);
+
+}
+
+
+/* =========================================================
+   TEXT SPRITE
+========================================================= */
+
+function textSprite(
+    text,
+    color
+){
+
+    let c=
+        document.createElement('canvas');
+
+    let x=
+        c.getContext('2d');
+
+
+    c.width=220;
+    c.height=70;
+
+
+    x.font=
+        'bold 34px Arial';
+
+    x.textAlign='center';
+
+    x.textBaseline='middle';
+
+    x.fillStyle=color;
+
+
+    /* glow */
+
+    x.shadowColor=color;
+    x.shadowBlur=15;
+
+
+    x.fillText(
+        text,
+        110,
+        35
+    );
+
+
+    let t=
+        new THREE.CanvasTexture(c);
+
+
+    let mat=
+        new THREE.SpriteMaterial({
+
+            map:t,
+
+            transparent:true
+
+        });
+
+
+    let sp=
+        new THREE.Sprite(mat);
+
+
+    sp.scale.set(
+        .8,
+        .25,
+        1
+    );
+
+
+    root.add(sp);
+
+    labels.push(sp);
+
+    return sp;
+
+}
+
+
+/* =========================================================
+   CLEAR MOLECULE
+========================================================= */
+
+function clearRoot(){
+
+    while(root.children.length){
+
+        root.remove(
+            root.children[0]
+        );
+
+    }
+
+    arrows=[];
+    labels=[];
+    angleObjects=[];
+
+}
+
+
+/* =========================================================
+   SELECT MOLECULE
+========================================================= */
+
+function select(k){
+
+    selected=k;
+
+
+    document
+        .querySelectorAll('.molbtn')
+        .forEach(
+            b=>
+                b.classList.toggle(
+                    'active',
+                    b.dataset.k===k
+                )
+        );
+
+
+    renderMol();
+
+}
+
+
+/* =========================================================
+   RENDER MOLECULE
+========================================================= */
+
+function renderMol(){
+
+    clearRoot();
+
+
+    let mol=
+        molecules[selected];
+
+
+    $('formula').textContent=
+        mol.formula;
+
+
+    $('classification').textContent=
+        mol.polar
+        ?
+        '● POLAR MOLECULE'
+        :
+        '● NON-POLAR MOLECULE';
+
+
+    $('classification').className=
+        'classification '+
+        (
+            mol.polar
+            ?
+            'polar'
+            :
+            'nonpolar'
+        );
+
+
+    $('explanation').textContent=
+        mol.reason;
+
+
+    $('error').style.display='none';
+
+
+    /* Atoms */
+
+    mol.atoms.map(
+        a=>
+            sphere(
+                a[0],
+                a[1]
+            )
+    );
+
+
+    /* Bonds */
+
+    mol.bonds.forEach(
+        ([i,j])=>
+            bond(
+                mol.atoms[i][1],
+                mol.atoms[j][1]
+            )
+    );
+
+
+    /* Partial charges */
+
+    if($('showCharge').checked){
+
+        mol.atoms.forEach(
+            (a,i)=>{
+
+                if(
+                    (a[0]==='H' &&
+                    mol.central!=='H')
+                    ||
+                    ['O','N','F','Cl']
+                    .includes(a[0])
+                ){
+
+                    let p=
+                        mol.atoms[i][1];
+
+
+                    let positive=
+                        a[0]==='H';
+
+
+                    let sp=
+                        textSprite(
+                            positive
+                            ?
+                            'δ⁺'
+                            :
+                            'δ⁻',
+
+                            positive
+                            ?
+                            '#6fa3ff'
+                            :
+                            '#ff5555'
+                        );
+
+
+                    sp.position.set(
+                        p[0],
+                        p[1]+.62,
+                        p[2]
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* Bond dipoles */
+
+    if($('showBond').checked){
+
+        drawBondDipoles(mol);
+
+    }
+
+
+    /* Molecular dipole */
+
+    if(
+        $('showMol').checked &&
+        mol.mu>0
+    ){
+
+        let scale=
+            Number(
+                $('dipScale').value
+            );
+
+
+        let dir=
+            netDirection(mol);
+
+
+        arrow(
+            [0,0,0],
+
+            [
+                dir.x*1.7*scale,
+                dir.y*1.7*scale,
+                dir.z*1.7*scale
+            ],
+
+            0x39ff88,
+
+            true
+        );
+
+    }
+
+
+    /* Angles */
+
+    if($('showAngles').checked){
+
+        drawAngles(mol);
+
+    }
+
+
+    updateResults(mol);
+
+}
+
+
+/* =========================================================
+   BOND DIPOLES
+========================================================= */
+
+function drawBondDipoles(m){
+
+    m.bonds.forEach(
+        ([i,j])=>{
+
+            let A=m.atoms[i];
+
+            let B=m.atoms[j];
+
+
+            let ea=electro(A[0]);
+
+            let eb=electro(B[0]);
+
+
+            let from=
+                ea>eb
+                ?
+                A[1]
+                :
+                B[1];
+
+
+            let to=
+                ea>eb
+                ?
+                B[1]
+                :
+                A[1];
+
+
+            let s=
+                new THREE.Vector3(...from);
+
+
+            let e=
+                new THREE.Vector3(...to);
+
+
+            let v=
+                e.clone()
+                .sub(s)
+                .normalize();
+
+
+            s.add(
+                v.clone()
+                .multiplyScalar(.35)
+            );
+
+
+            e.sub(
+                v.clone()
+                .multiplyScalar(.35)
+            );
+
+
+            arrow(
+                s.toArray(),
+                e.toArray(),
+                0x39ff88,
+                true
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ELECTRONEGATIVITY
+========================================================= */
+
+function electro(e){
+
+    return({
+
+        H:2.20,
+        C:2.55,
+        N:3.04,
+        O:3.44,
+        F:3.98,
+        Cl:3.16,
+        S:2.58,
+        B:2.04
+
+    })[e]||2.5;
+
+}
+
+
+/* =========================================================
+   NET DIRECTION
+========================================================= */
+
+function netDirection(m){
+
+    let v=
+        new THREE.Vector3();
+
+
+    m.bonds.forEach(
+        ([i,j])=>{
+
+            let A=m.atoms[i];
+
+            let B=m.atoms[j];
+
+
+            let ea=
+                electro(A[0]);
+
+            let eb=
+                electro(B[0]);
+
+
+            let p=
+                new THREE.Vector3(
+                    ...A[1]
+                );
+
+
+            let q=
+                new THREE.Vector3(
+                    ...B[1]
+                );
+
+
+            if(eb>ea){
+
+                v.add(
+                    q
+                    .sub(p)
+                    .normalize()
+                );
+
+            }
+            else{
+
+                v.add(
+                    p
+                    .sub(q)
+                    .normalize()
+                );
+
+            }
+
+        }
+    );
+
+
+    return v.length()
+        ?
+        v.normalize()
+        :
+        new THREE.Vector3(
+            1,
+            0,
+            0
+        );
+
+}
+
+
+/* =========================================================
+   ANGLES
+========================================================= */
+
+function drawAngles(m){
+
+    m.angles.forEach(
+        (x,n)=>{
+
+            let sp=
+                textSprite(
+                    x[0]+' '+x[1]+'°',
+                    '#9dffba'
+                );
+
+
+            sp.position.set(
+                0,
+                -1.35-n*.35,
+                0
+            );
+
+
+            angleObjects.push(sp);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+function updateResults(m){
+
+    $('results').innerHTML=`
+
+        <div class="metric">
+
+            <div>
+                Dipole moment
+
+                <b>
+                    ${m.mu.toFixed(2)} D
+                </b>
+            </div>
+
+            <div>
+                Bond polarity
+
+                <b>
+                    ${m.mu===0
+                        ?
+                        'CANCELS'
+                        :
+                        'ADDS'
+                    }
+                </b>
+            </div>
+
+        </div>
+
+        ${
+            m.angles.length
+            ?
+            `
+            <p class="hint">
+
+                <b>Geometry:</b>
+
+                ${
+                    m.angles
+                    .map(
+                        a=>
+                            a[0]+' = '+a[1]+'°'
+                    )
+                    .join(', ')
+                }
+
+            </p>
+            `
+            :
+            ''
+        }
+
+        <p class="hint">
+
+            <b>Conclusion:</b>
+
+            ${
+                m.polar
+                ?
+                'Net dipole ≠ 0 → polar.'
+                :
+                'Net dipole = 0 → non-polar.'
+            }
+
+        </p>
+    `;
+
+}
+
+
+/* =========================================================
+   ANIMATION LOOP
+========================================================= */
+
+function animateLoop(){
+
+    requestAnimationFrame(
+        animateLoop
+    );
+
+
+    root.rotation.x=rotX;
+
+    root.rotation.y=rotY;
+
+
+    /* Very subtle floating motion */
+
+    if($('animate')?.checked){
+
+        root.position.y=
+            Math.sin(
+                Date.now()*.0012
+            )*.035;
+
+    }
+    else{
+
+        root.position.y=0;
+
+    }
+
+
+    renderer.render(
+        scene,
+        camera
+    );
+
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+[
+    'showBond',
+    'showMol',
+    'showCharge',
+    'showAngles',
+    'dipScale',
+    'animate'
+].forEach(
+    id=>
+        $(id).addEventListener(
+            'input',
+            renderMol
+        )
+);
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+$('reset').onclick=()=>{
+
+    rotX=.15;
+
+    rotY=-.25;
+
+    camera.position.set(
+        0,
+        0,
+        8
+    );
+
+    renderMol();
+
+};
+
+
+/* =========================================================
+   START
+========================================================= */
+
+makeButtons();
+
+init3D();
+
+select('H2O');
+
+</script>
+<script>
+    document.querySelectorAll(".nav-tab").forEach(tab => {
+        tab.addEventListener("click", function () {
+    
+            // Remove active state from every tab
+            document.querySelectorAll(".nav-tab").forEach(t => {
+                t.classList.remove("active");
+            });
+    
+            // Add active state to clicked tab
+            this.classList.add("active");
+    
+            // Get selected page
+            const page = this.dataset.page;
+    
+            // Change page
+            if (page === "home") {
+                window.location.href = "index.html";
+            }
+    
+            if (page === "bonding") {
+                window.location.href = "bonding.html";
+            }
+    
+            if (page === "polarity") {
+                window.location.href = "polarity.html";
+            }
+    
+            if (page === "molecule") {
+                window.location.href = "molecule.html";
+            }
+        });
+    });
+    </script>
+</body>
+</html>
+
