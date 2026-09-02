@@ -204,7 +204,7 @@ body {
 .logo-subtitle {
     margin-top: 3px;
 
-    color: #617568;
+    color: #07120b;
 
     font-size: 8px;
     font-weight: 700;
@@ -243,7 +243,7 @@ body {
 
     position: relative;
 
-    color: #718579;
+    color: #07120b;
 
     text-decoration: none;
 
@@ -252,7 +252,7 @@ body {
 
     letter-spacing: 1px;
 
-    white-space: nowrap;
+    #07120b-space: nowrap;
 
     transition:
         color .2s ease,
@@ -456,7 +456,7 @@ main {
         #67b186
     );
 
-    color: white;
+    color: #07120b;
 
     font-size: 22px;
 
@@ -479,7 +479,7 @@ main {
 
     letter-spacing: 1.5px;
 
-    white-space: nowrap;
+    #07120b-space: nowrap;
 }
 
 
@@ -497,7 +497,7 @@ main {
 
     letter-spacing: 2px;
 
-    white-space: nowrap;
+    #07120b-space: nowrap;
 }
 
 
@@ -546,7 +546,7 @@ main {
 
     letter-spacing: 0.7px;
 
-    white-space: nowrap;
+    #07120b-space: nowrap;
 
     transition: 0.25s ease;
 }
@@ -688,7 +688,7 @@ main {
 .reset-btn:hover {
     background: #56c173;
 
-    color: white;
+    color: #07120b;
 
     transform: translateY(-1px);
 
@@ -771,7 +771,7 @@ main {
 
     border-radius: 24px;
 
-    background: white;
+    background: #07120b;
 
     border:
         1px solid var(--border);
@@ -876,7 +876,7 @@ main {
     border:
         1px solid var(--border);
 
-    background: white;
+    background: #07120b;
 
     color: #4e5870;
 
@@ -902,7 +902,7 @@ main {
 .property-tabs button.active {
     background: #5964f2;
 
-    color: white;
+    color: #07120b;
 
     border-color: #5964f2;
 
@@ -928,7 +928,7 @@ main {
 
     padding: 14px 16px;
 
-    background: white;
+    background: #07120b;
 
     border:
         1px solid var(--border);
@@ -1133,7 +1133,7 @@ main {
 
     text-align: center;
 
-    white-space: nowrap;
+    #07120b-space: nowrap;
 
     max-width: 100%;
 
@@ -1161,7 +1161,7 @@ main {
 .details {
     margin-top: 25px;
 
-    background: white;
+    background: #07120b;
 
     border:
         1px solid var(--border);
@@ -1534,7 +1534,7 @@ main {
         #727cff
     );
 
-    color: white;
+    color: #07120b;
 
     font-family: Inter, Arial, sans-serif;
     font-size: 13px;
@@ -1645,7 +1645,7 @@ main {
         #7b84ff
     );
 
-    color: white;
+    color: #07120b;
 
     font-size: 23px;
 
