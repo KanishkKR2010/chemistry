@@ -393,7 +393,6 @@ const molecules = [
     polarity:"Polar"
 },
 
-   
 /* ===================== 121–130: ORGANIC ===================== */
 
 {
@@ -2215,7 +2214,7 @@ const molecules = [
     angle:"180°",
     polarity:"Nonpolar"
 }
-,
+
 {
     name:"Peroxide ion",
     formula:"O2-2",
