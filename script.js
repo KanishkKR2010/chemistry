@@ -9554,14 +9554,17 @@ const molecules = [
     
         if(bondsVisible) {
     
-            molecule.bonds.forEach(pair => {
-    
-                createBond(
-                    molecule.atoms[pair[0]],
-                    molecule.atoms[pair[1]]
-                );
-    
-            });
+           molecule.bonds.forEach(pair => {
+
+    const order = pair[2] || 1;
+
+    createBond(
+        molecule.atoms[pair[0]],
+        molecule.atoms[pair[1]],
+        order
+    );
+
+});
     
         }
     
@@ -9579,69 +9582,120 @@ const molecules = [
        CREATE BOND
     ============================================================ */
     
-    function createBond(a,b) {
-    
-        const start =
-            new THREE.Vector3(
-                a[1],
-                a[2],
-                a[3]
-            );
-    
-        const end =
-            new THREE.Vector3(
-                b[1],
-                b[2],
-                b[3]
-            );
-    
-    
-        const direction =
-            new THREE.Vector3()
-            .subVectors(end,start);
-    
-    
-        const length =
-            direction.length();
-    
-    
+    function createBond(a, b, order = 1) {
+
+    const start = new THREE.Vector3(
+        a[1],
+        a[2],
+        a[3]
+    );
+
+    const end = new THREE.Vector3(
+        b[1],
+        b[2],
+        b[3]
+    );
+
+    const direction = new THREE.Vector3()
+        .subVectors(end, start);
+
+    const length = direction.length();
+
+    const unitDirection = direction.clone().normalize();
+
+    /* Bond thickness */
+    const radius = 0.05;
+
+    /* Find a vector perpendicular to the bond */
+    let offsetDirection = new THREE.Vector3(0, 1, 0);
+
+    if (Math.abs(unitDirection.dot(offsetDirection)) > 0.9) {
+        offsetDirection.set(1, 0, 0);
+    }
+
+    offsetDirection
+        .crossVectors(unitDirection, offsetDirection)
+        .normalize();
+
+    /* Distance between parallel bonds */
+    const spacing = 0.13;
+
+    let offsets = [];
+
+    if (order === 1) {
+
+        offsets = [0];
+
+    } else if (order === 2) {
+
+        offsets = [
+            -spacing / 2,
+             spacing / 2
+        ];
+
+    } else if (order === 3) {
+
+        offsets = [
+            -spacing,
+             0,
+             spacing
+        ];
+
+    } else {
+
+        offsets = [0];
+
+    }
+
+    offsets.forEach(offset => {
+
+        const offsetVector =
+            offsetDirection.clone()
+            .multiplyScalar(offset);
+
+        const bondStart =
+            start.clone().add(offsetVector);
+
+        const bondEnd =
+            end.clone().add(offsetVector);
+
         const geometry =
             new THREE.CylinderGeometry(
-                0.06,
-                0.06,
+                radius,
+                radius,
                 length,
                 16
             );
-    
-    
+
         const material =
             new THREE.MeshStandardMaterial({
-                color:0xb9c5bd,
-                roughness:0.4
+                color: 0xb9c5bd,
+                roughness: 0.4
             });
-    
-    
+
         const cylinder =
             new THREE.Mesh(
                 geometry,
                 material
             );
-    
-    
+
         cylinder.position.copy(
-            start.clone().add(end).multiplyScalar(0.5)
+            bondStart
+                .clone()
+                .add(bondEnd)
+                .multiplyScalar(0.5)
         );
-    
-    
+
         cylinder.quaternion.setFromUnitVectors(
-            new THREE.Vector3(0,1,0),
-            direction.normalize()
+            new THREE.Vector3(0, 1, 0),
+            unitDirection
         );
-    
-    
+
         moleculeGroup.add(cylinder);
-    
-    }
+
+    });
+
+}
     
     
     /* ============================================================
