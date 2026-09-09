@@ -17,6 +17,2220 @@ const molecules = [
 
 /* ===================== DIATOMIC & SIMPLE MOLECULES ===================== */
 
+    name:"Hydrogen sulfide",
+    formula:"H2S",
+    category:"Gases",
+    atoms:[
+        ["S",0,0,0],
+        ["H",-0.9,0.55,0],
+        ["H",0.9,0.55,0]
+    ],
+    bonds:[[0,1,1],[0,2,1]],
+    shape:"Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~92°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen selenide",
+    formula:"H2Se",
+    category:"Gases",
+    atoms:[
+        ["Se",0,0,0],
+        ["H",-0.9,0.5,0],
+        ["H",0.9,0.5,0]
+    ],
+    bonds:[[0,1,1],[0,2,1]],
+    shape:"Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~91°",
+    polarity:"Polar"
+},
+
+{
+    name:"Ammonia",
+    formula:"NH3",
+    category:"Bases",
+    atoms:[
+        ["N",0,0,0],
+        ["H",1,0.6,0],
+        ["H",-1,0.6,0],
+        ["H",0,-0.9,0.7]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1]],
+    shape:"Trigonal pyramidal",
+    domains:4,
+    hybridization:"sp3",
+    angle:"107°",
+    polarity:"Polar"
+},
+
+{
+    name:"Boron hydride",
+    formula:"BH3",
+    category:"Inorganic",
+    atoms:[
+        ["B",0,0,0],
+        ["H",1.2,0,0],
+        ["H",-0.6,1.04,0],
+        ["H",-0.6,-1.04,0]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1]],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"120°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Silicon tetrachloride",
+    formula:"SiCl4",
+    category:"Inorganic",
+    atoms:[
+        ["Si",0,0,0],
+        ["Cl",1,1,1],
+        ["Cl",-1,-1,1],
+        ["Cl",-1,1,-1],
+        ["Cl",1,-1,-1]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1],[0,4,1]],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Silicon tetrafluoride",
+    formula:"SiF4",
+    category:"Gases",
+    atoms:[
+        ["Si",0,0,0],
+        ["F",1,1,1],
+        ["F",-1,-1,1],
+        ["F",-1,1,-1],
+        ["F",1,-1,-1]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1],[0,4,1]],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Sulfur dichloride",
+    formula:"SCl2",
+    category:"Inorganic",
+    atoms:[
+        ["S",0,0,0],
+        ["Cl",-1,0.7,0],
+        ["Cl",1,0.7,0]
+    ],
+    bonds:[[0,1,1],[0,2,1]],
+    shape:"Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~103°",
+    polarity:"Polar"
+},
+
+{
+    name:"Carbonyl sulfide",
+    formula:"COS",
+    category:"Gases",
+    atoms:[
+        ["O",-1.2,0,0],
+        ["C",0,0,0],
+        ["S",1.2,0,0]
+    ],
+    bonds:[[0,1,2],[1,2,2]],
+    shape:"Linear",
+    domains:2,
+    hybridization:"sp",
+    angle:"180°",
+    polarity:"Polar"
+},
+
+{
+    name:"Carbon disulfide",
+    formula:"CS2",
+    category:"Gases",
+    atoms:[
+        ["S",-1.3,0,0],
+        ["C",0,0,0],
+        ["S",1.3,0,0]
+    ],
+    bonds:[[0,1,2],[1,2,2]],
+    shape:"Linear",
+    domains:2,
+    hybridization:"sp",
+    angle:"180°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Phosphorus tribromide",
+    formula:"PBr3",
+    category:"Inorganic",
+    atoms:[
+        ["P",0,0,0],
+        ["Br",1.2,0.5,0],
+        ["Br",-1.2,0.5,0],
+        ["Br",0,-0.9,0.7]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1]],
+    shape:"Trigonal pyramidal",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~101°",
+    polarity:"Polar"
+},
+
+/* ===================== 111–120: SULFUR / HALOGEN ===================== */
+
+{
+    name:"Sulfur dichloride monoxide",
+    formula:"SOCl2",
+    category:"Inorganic",
+    atoms:[
+        ["S",0,0,0],
+        ["O",0,1.2,0],
+        ["Cl",-1.1,-0.5,0],
+        ["Cl",1.1,-0.5,0]
+    ],
+    bonds:[[0,1,2],[0,2,1],[0,3,1]],
+    shape:"Trigonal pyramidal",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109°",
+    polarity:"Polar"
+},
+
+{
+    name:"Sulfuryl chloride",
+    formula:"SO2Cl2",
+    category:"Inorganic",
+    atoms:[
+        ["S",0,0,0],
+        ["O",1.1,0,0],
+        ["O",-1.1,0,0],
+        ["Cl",0,1.3,0],
+        ["Cl",0,-1.3,0]
+    ],
+    bonds:[[0,1,2],[0,2,2],[0,3,1],[0,4,1]],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dichlorine monoxide",
+    formula:"Cl2O",
+    category:"Inorganic",
+    atoms:[
+        ["Cl",-1,0.5,0],
+        ["O",0,0,0],
+        ["Cl",1,0.5,0]
+    ],
+    bonds:[[0,1,1],[1,2,1]],
+    shape:"Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~110°",
+    polarity:"Polar"
+},
+
+{
+    name:"Chlorine dioxide",
+    formula:"ClO2",
+    category:"Gases",
+    atoms:[
+        ["Cl",0,0,0],
+        ["O",-1,0.8,0],
+        ["O",1,0.8,0]
+    ],
+    bonds:[[0,1,2],[0,2,1]],
+    shape:"Bent",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~118°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dinitrogen tetroxide",
+    formula:"N2O4",
+    category:"Gases",
+    atoms:[
+        ["N",-0.8,0,0],
+        ["N",0.8,0,0],
+        ["O",-1.5,0.9,0],
+        ["O",-1.5,-0.9,0],
+        ["O",1.5,0.9,0],
+        ["O",1.5,-0.9,0]
+    ],
+    bonds:[
+        [0,1,1],
+        [0,2,2],[0,3,1],
+        [1,4,2],[1,5,1]
+    ],
+    shape:"Planar around N",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Phosphorus trioxide",
+    formula:"P4O6",
+    category:"Inorganic",
+    atoms:[
+        ["P",1,1,1],
+        ["P",-1,-1,1],
+        ["P",-1,1,-1],
+        ["P",1,-1,-1],
+        ["O",0,1.2,1.2],
+        ["O",-1.2,0,1.2],
+        ["O",-1.2,1.2,0],
+        ["O",1.2,0,-1.2],
+        ["O",1.2,-1.2,0],
+        ["O",0,-1.2,-1.2]
+    ],
+    bonds:[
+        [0,4,1],[0,5,1],[0,6,1],
+        [1,4,1],[1,5,1],[1,7,1],
+        [2,6,1],[2,7,1],[2,8,1],
+        [3,8,1],[3,9,1],[3,7,1]
+    ],
+    shape:"Polyhedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Sulfur hexafluoride",
+    formula:"SF6",
+    category:"Gases",
+    atoms:[
+        ["S",0,0,0],
+        ["F",1.3,0,0],
+        ["F",-1.3,0,0],
+        ["F",0,1.3,0],
+        ["F",0,-1.3,0],
+        ["F",0,0,1.3],
+        ["F",0,0,-1.3]
+    ],
+    bonds:[
+        [0,1,1],[0,2,1],[0,3,1],
+        [0,4,1],[0,5,1],[0,6,1]
+    ],
+    shape:"Octahedral",
+    domains:6,
+    hybridization:"sp3d2",
+    angle:"90° / 180°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Iodine monochloride",
+    formula:"ICl",
+    category:"Inorganic",
+    atoms:[
+        ["I",-0.8,0,0],
+        ["Cl",0.8,0,0]
+    ],
+    bonds:[[0,1,1]],
+    shape:"Linear",
+    domains:1,
+    hybridization:"—",
+    angle:"180°",
+    polarity:"Polar"
+},
+
+{
+    name:"Bromine chloride",
+    formula:"BrCl",
+    category:"Inorganic",
+    atoms:[
+        ["Br",-0.85,0,0],
+        ["Cl",0.85,0,0]
+    ],
+    bonds:[[0,1,1]],
+    shape:"Linear",
+    domains:1,
+    hybridization:"—",
+    angle:"180°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen peroxide",
+    formula:"H2O2",
+    category:"Inorganic",
+    atoms:[
+        ["O",-0.7,0,0],
+        ["O",0.7,0.3,0],
+        ["H",-1.2,0.7,0.5],
+        ["H",1.2,0.9,-0.5]
+    ],
+    bonds:[[0,1,1],[0,2,1],[1,3,1]],
+    shape:"Nonlinear",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~94°",
+    polarity:"Polar"
+},
+
+/* ===================== 121–130: ORGANIC ===================== */
+
+{
+    name:"Propane",
+    formula:"C3H8",
+    category:"Organic",
+    atoms:[
+        ["C",-1.3,0,0],
+        ["C",0,0,0],
+        ["C",1.3,0,0],
+        ["H",-1.8,0.9,0],
+        ["H",-1.8,-0.45,0.8],
+        ["H",-1.8,-0.45,-0.8],
+        ["H",0,1,0],
+        ["H",0,-1,0],
+        ["H",1.8,0.9,0],
+        ["H",1.8,-0.45,0.8],
+        ["H",1.8,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],
+        [0,3,1],[0,4,1],[0,5,1],
+        [1,6,1],[1,7,1],
+        [2,8,1],[2,9,1],[2,10,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Propene",
+    formula:"C3H6",
+    category:"Organic",
+    atoms:[
+        ["C",-1.3,0,0],
+        ["C",0,0,0],
+        ["C",1.3,0,0],
+        ["H",-1.8,0.9,0],
+        ["H",-1.8,-0.9,0],
+        ["H",0,1.1,0],
+        ["H",0,-1.1,0],
+        ["H",1.8,0.9,0],
+        ["H",1.8,-0.45,0.8],
+        ["H",1.8,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],
+        [0,3,1],[0,4,1],
+        [1,5,1],[1,6,1],
+        [2,7,1],[2,8,1],[2,9,1]
+    ],
+    shape:"Trigonal planar / Tetrahedral",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"120° / 109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Propyne",
+    formula:"C3H4",
+    category:"Organic",
+    atoms:[
+        ["C",-1.3,0,0],
+        ["C",0,0,0],
+        ["C",1.2,0,0],
+        ["H",-2,0,0],
+        ["H",1.9,0.9,0],
+        ["H",1.9,-0.45,0.8],
+        ["H",1.9,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,1],
+        [1,2,3],
+        [0,3,1],
+        [2,4,1],[2,5,1],[2,6,1]
+    ],
+    shape:"Linear at C≡C",
+    domains:2,
+    hybridization:"sp",
+    angle:"180°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Butane",
+    formula:"C4H10",
+    category:"Organic",
+    atoms:[
+        ["C",-2,0,0],
+        ["C",-0.7,0,0],
+        ["C",0.7,0,0],
+        ["C",2,0,0],
+        ["H",-2.5,0.9,0],
+        ["H",-2.5,-0.45,0.8],
+        ["H",-2.5,-0.45,-0.8],
+        ["H",-0.7,1,0],
+        ["H",-0.7,-1,0],
+        ["H",0.7,1,0],
+        ["H",0.7,-1,0],
+        ["H",2.5,0.9,0],
+        ["H",2.5,-0.45,0.8],
+        ["H",2.5,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],[2,3,1],
+        [0,4,1],[0,5,1],[0,6,1],
+        [1,7,1],[1,8,1],
+        [2,9,1],[2,10,1],
+        [3,11,1],[3,12,1],[3,13,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Methanethiol",
+    formula:"CH3SH",
+    category:"Organic",
+    atoms:[
+        ["C",-0.8,0,0],
+        ["S",0.6,0,0],
+        ["H",-1.2,0.9,0],
+        ["H",-1.2,-0.45,0.8],
+        ["H",-1.2,-0.45,-0.8],
+        ["H",1.2,0.7,0]
+    ],
+    bonds:[
+        [0,1,1],
+        [0,2,1],[0,3,1],[0,4,1],
+        [1,5,1]
+    ],
+    shape:"Tetrahedral / Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5° / ~96°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dimethyl sulfide",
+    formula:"(CH3)2S",
+    category:"Organic",
+    atoms:[
+        ["S",0,0,0],
+        ["C",-1.3,0.7,0],
+        ["C",1.3,0.7,0],
+        ["H",-1.8,1.4,0],
+        ["H",-1.8,0,0.8],
+        ["H",-1.8,0,-0.8],
+        ["H",1.8,1.4,0],
+        ["H",1.8,0,0.8],
+        ["H",1.8,0,-0.8]
+    ],
+    bonds:[
+        [0,1,1],[0,2,1],
+        [1,3,1],[1,4,1],[1,5,1],
+        [2,6,1],[2,7,1],[2,8,1]
+    ],
+    shape:"Bent around S",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~99°",
+    polarity:"Polar"
+},
+
+{
+    name:"Nitromethane",
+    formula:"CH3NO2",
+    category:"Organic",
+    atoms:[
+        ["C",-1.2,0,0],
+        ["N",0,0,0],
+        ["O",1.1,0.8,0],
+        ["O",1.1,-0.8,0],
+        ["H",-1.7,0.9,0],
+        ["H",-1.7,-0.45,0.8],
+        ["H",-1.7,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,1],
+        [1,2,2],
+        [1,3,1],
+        [0,4,1],[0,5,1],[0,6,1]
+    ],
+    shape:"Trigonal planar / Tetrahedral",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"~120° / 109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dimethylformamide",
+    formula:"C3H7NO",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["N",-0.8,0.9,0],
+        ["C",-1.4,-0.5,0],
+        ["C",-1.7,1.8,0],
+        ["H",-2.1,-1,0],
+        ["H",-1.8,0,0.8],
+        ["H",-1.8,0,-0.8]
+    ],
+    bonds:[
+        [0,1,2],[0,2,1],[0,3,1],
+        [2,4,1],
+        [3,5,1],[3,6,1],[3,7,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Ethylene glycol",
+    formula:"C2H6O2",
+    category:"Organic",
+    atoms:[
+        ["C",-0.8,0,0],
+        ["C",0.8,0,0],
+        ["O",-1.5,0.9,0],
+        ["O",1.5,0.9,0],
+        ["H",-1.1,-0.9,0],
+        ["H",-0.9,0,0.9],
+        ["H",1.1,-0.9,0],
+        ["H",0.9,0,0.9],
+        ["H",-2,1.4,0],
+        ["H",2,1.4,0]
+    ],
+    bonds:[
+        [0,1,1],
+        [0,2,1],[0,4,1],[0,5,1],
+        [1,3,1],[1,6,1],[1,7,1],
+        [2,8,1],[3,9,1]
+    ],
+    shape:"Tetrahedral / Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5° / ~104.5°",
+    polarity:"Polar"
+},
+
+/* ===================== 131–140: COMMON ORGANIC FUNCTIONAL GROUPS ===================== */
+
+{
+    name:"Dimethyl carbonate",
+    formula:"C3H6O3",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.7,0.9,0],
+        ["O",-0.7,-0.9,0],
+        ["C",-1.8,1.5,0],
+        ["C",-1.8,-1.5,0]
+    ],
+    bonds:[
+        [0,1,2],[0,2,1],[0,3,1],
+        [2,4,1],[3,5,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Methyl acetate",
+    formula:"C3H6O2",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.7,0.9,0],
+        ["C",-0.7,-1.2,0],
+        ["C",-1.8,1.5,0]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [2,4,1]
+    ],
+    shape:"Trigonal planar / Tetrahedral",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"~120° / 109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Ethyl acetate",
+    formula:"C4H8O2",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.7,0.9,0],
+        ["C",-0.7,-1.2,0],
+        ["C",-1.8,1.5,0],
+        ["C",-2.8,1.5,0]
+    ],
+    bonds:[
+        [0,1,2],[0,2,1],[0,3,1],
+        [2,4,1],[4,5,1]
+    ],
+    shape:"Trigonal planar / Tetrahedral",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"~120° / 109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Acetaldehyde oxime",
+    formula:"C2H5NO",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["N",1.2,0,0],
+        ["O",2.1,0.8,0],
+        ["C",-1.2,0,0],
+        ["H",-1.7,0.9,0],
+        ["H",-1.7,-0.45,0.8],
+        ["H",-1.7,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,2],
+        [1,2,1],
+        [0,3,1],
+        [3,4,1],[3,5,1],[3,6,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Acetanilide",
+    formula:"C8H9NO",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["N",-0.8,0.9,0],
+        ["C",-1.4,-0.5,0]
+    ],
+    bonds:[
+        [0,1,2],[0,2,1],[0,3,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Aniline",
+    formula:"C6H7N",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.21,0],
+        ["C",-0.7,1.21,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.21,0],
+        ["C",0.7,-1.21,0],
+        ["N",2.3,0,0]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],[2,3,2],
+        [3,4,1],[4,5,2],[5,0,1],
+        [0,6,1]
+    ],
+    shape:"Planar ring / Pyramidal at N",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"120° / ~107°",
+    polarity:"Polar"
+},
+
+{
+    name:"Toluene",
+    formula:"C7H8",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.21,0],
+        ["C",-0.7,1.21,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.21,0],
+        ["C",0.7,-1.21,0],
+        ["C",2.5,0,0]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],[2,3,2],
+        [3,4,1],[4,5,2],[5,0,1],
+        [0,6,1]
+    ],
+    shape:"Planar aromatic ring / Tetrahedral methyl",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"120° / 109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Styrene",
+    formula:"C8H8",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.21,0],
+        ["C",-0.7,1.21,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.21,0],
+        ["C",0.7,-1.21,0],
+        ["C",2.5,0,0],
+        ["C",3.6,0,0]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],[2,3,2],
+        [3,4,1],[4,5,2],[5,0,1],
+        [0,6,1],[6,7,2]
+    ],
+    shape:"Planar aromatic / Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"120°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Cyclohexane",
+    formula:"C6H12",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.2,0],
+        ["C",-0.7,1.2,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.2,0],
+        ["C",0.7,-1.2,0]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],[2,3,1],
+        [3,4,1],[4,5,1],[5,0,1]
+    ],
+    shape:"Chair / Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Cyclohexene",
+    formula:"C6H10",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.2,0],
+        ["C",-0.7,1.2,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.2,0],
+        ["C",0.7,-1.2,0]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],[2,3,1],
+        [3,4,1],[4,5,1],[5,0,1]
+    ],
+    shape:"Nonplanar ring",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"~120° / 109.5°",
+    polarity:"Nonpolar"
+},
+
+/* ===================== 141–150: IMPORTANT BIO/GENERAL CHEMISTRY ===================== */
+
+{
+    name:"Glucose",
+    formula:"C6H12O6",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["C",1.3,0,0],
+        ["C",2.6,0,0],
+        ["C",3.9,0,0],
+        ["C",5.2,0,0],
+        ["C",6.5,0,0],
+        ["O",7.5,0.8,0]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],[2,3,1],
+        [3,4,1],[4,5,1],[5,6,1]
+    ],
+    shape:"Tetrahedral carbon centers",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Fructose",
+    formula:"C6H12O6",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["C",1.3,0,0],
+        ["C",2.6,0,0],
+        ["C",3.9,0,0],
+        ["C",5.2,0,0],
+        ["C",6.5,0,0],
+        ["O",2.6,1.2,0]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],[2,3,1],
+        [3,4,1],[4,5,1],[2,6,2]
+    ],
+    shape:"Tetrahedral / Trigonal planar",
+    domains:4,
+    hybridization:"sp3 / sp2",
+    angle:"109.5° / 120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Glycine",
+    formula:"C2H5NO2",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["N",-1.2,0,0],
+        ["C",1.2,0,0],
+        ["O",2.2,0.8,0],
+        ["O",2.2,-0.8,0]
+    ],
+    bonds:[
+        [0,1,1],
+        [0,2,1],
+        [2,3,2],
+        [2,4,1]
+    ],
+    shape:"Tetrahedral / Trigonal planar",
+    domains:4,
+    hybridization:"sp3 / sp2",
+    angle:"109.5° / 120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Carbonic acid",
+    formula:"H2CO3",
+    category:"Acids",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.6,1.04,0],
+        ["O",-0.6,-1.04,0],
+        ["H",-1.1,1.5,0],
+        ["H",-1.1,-1.5,0]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [2,4,1],
+        [3,5,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen carbonate",
+    formula:"HCO3-",
+    category:"Ions",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.6,1.04,0],
+        ["O",-0.6,-1.04,0],
+        ["H",-1.1,-1.5,0]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [3,4,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen sulfate",
+    formula:"HSO4-",
+    category:"Ions",
+    atoms:[
+        ["S",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-1.2,0,0],
+        ["O",0,1.2,0],
+        ["O",0,-1.2,0],
+        ["H",0,-1.8,0.5]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,2],
+        [0,3,1],
+        [0,4,1],
+        [4,5,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen phosphate",
+    formula:"HPO4-2",
+    category:"Ions",
+    atoms:[
+        ["P",0,0,0],
+        ["O",1,1,1],
+        ["O",-1,-1,1],
+        ["O",-1,1,-1],
+        ["O",1,-1,-1],
+        ["H",1.5,-1.5,-1.5]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [0,4,1],
+        [4,5,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dihydrogen phosphate",
+    formula:"H2PO4-",
+    category:"Ions",
+    atoms:[
+        ["P",0,0,0],
+        ["O",1,1,1],
+        ["O",-1,-1,1],
+        ["O",-1,1,-1],
+        ["O",1,-1,-1],
+        ["H",-1.5,1.5,-1.5],
+        ["H",1.5,-1.5,-1.5]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [0,4,1],
+        [3,5,1],
+        [4,6,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen sulfide ion",
+    formula:"HS-",
+    category:"Ions",
+    atoms:[
+        ["S",-0.7,0,0],
+        ["H",0.7,0,0]
+    ],
+    bonds:[[0,1,1]],
+    shape:"Linear",
+    domains:1,
+    hybridization:"—",
+    angle:"180°",
+    polarity:"Polar"
+},
+
+
+/* ===================== 101–110: SIMPLE INORGANIC ===================== */
+
+{
+    name:"Hydrogen sulfide",
+    formula:"H2S",
+    category:"Gases",
+    atoms:[
+        ["S",0,0,0],
+        ["H",-0.9,0.55,0],
+        ["H",0.9,0.55,0]
+    ],
+    bonds:[[0,1,1],[0,2,1]],
+    shape:"Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~92°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen selenide",
+    formula:"H2Se",
+    category:"Gases",
+    atoms:[
+        ["Se",0,0,0],
+        ["H",-0.9,0.5,0],
+        ["H",0.9,0.5,0]
+    ],
+    bonds:[[0,1,1],[0,2,1]],
+    shape:"Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~91°",
+    polarity:"Polar"
+},
+
+{
+    name:"Ammonia",
+    formula:"NH3",
+    category:"Bases",
+    atoms:[
+        ["N",0,0,0],
+        ["H",1,0.6,0],
+        ["H",-1,0.6,0],
+        ["H",0,-0.9,0.7]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1]],
+    shape:"Trigonal pyramidal",
+    domains:4,
+    hybridization:"sp3",
+    angle:"107°",
+    polarity:"Polar"
+},
+
+{
+    name:"Boron hydride",
+    formula:"BH3",
+    category:"Inorganic",
+    atoms:[
+        ["B",0,0,0],
+        ["H",1.2,0,0],
+        ["H",-0.6,1.04,0],
+        ["H",-0.6,-1.04,0]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1]],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"120°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Silicon tetrachloride",
+    formula:"SiCl4",
+    category:"Inorganic",
+    atoms:[
+        ["Si",0,0,0],
+        ["Cl",1,1,1],
+        ["Cl",-1,-1,1],
+        ["Cl",-1,1,-1],
+        ["Cl",1,-1,-1]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1],[0,4,1]],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Silicon tetrafluoride",
+    formula:"SiF4",
+    category:"Gases",
+    atoms:[
+        ["Si",0,0,0],
+        ["F",1,1,1],
+        ["F",-1,-1,1],
+        ["F",-1,1,-1],
+        ["F",1,-1,-1]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1],[0,4,1]],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Sulfur dichloride",
+    formula:"SCl2",
+    category:"Inorganic",
+    atoms:[
+        ["S",0,0,0],
+        ["Cl",-1,0.7,0],
+        ["Cl",1,0.7,0]
+    ],
+    bonds:[[0,1,1],[0,2,1]],
+    shape:"Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~103°",
+    polarity:"Polar"
+},
+
+{
+    name:"Carbonyl sulfide",
+    formula:"COS",
+    category:"Gases",
+    atoms:[
+        ["O",-1.2,0,0],
+        ["C",0,0,0],
+        ["S",1.2,0,0]
+    ],
+    bonds:[[0,1,2],[1,2,2]],
+    shape:"Linear",
+    domains:2,
+    hybridization:"sp",
+    angle:"180°",
+    polarity:"Polar"
+},
+
+{
+    name:"Carbon disulfide",
+    formula:"CS2",
+    category:"Gases",
+    atoms:[
+        ["S",-1.3,0,0],
+        ["C",0,0,0],
+        ["S",1.3,0,0]
+    ],
+    bonds:[[0,1,2],[1,2,2]],
+    shape:"Linear",
+    domains:2,
+    hybridization:"sp",
+    angle:"180°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Phosphorus tribromide",
+    formula:"PBr3",
+    category:"Inorganic",
+    atoms:[
+        ["P",0,0,0],
+        ["Br",1.2,0.5,0],
+        ["Br",-1.2,0.5,0],
+        ["Br",0,-0.9,0.7]
+    ],
+    bonds:[[0,1,1],[0,2,1],[0,3,1]],
+    shape:"Trigonal pyramidal",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~101°",
+    polarity:"Polar"
+},
+
+/* ===================== 111–120: SULFUR / HALOGEN ===================== */
+
+{
+    name:"Sulfur dichloride monoxide",
+    formula:"SOCl2",
+    category:"Inorganic",
+    atoms:[
+        ["S",0,0,0],
+        ["O",0,1.2,0],
+        ["Cl",-1.1,-0.5,0],
+        ["Cl",1.1,-0.5,0]
+    ],
+    bonds:[[0,1,2],[0,2,1],[0,3,1]],
+    shape:"Trigonal pyramidal",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109°",
+    polarity:"Polar"
+},
+
+{
+    name:"Sulfuryl chloride",
+    formula:"SO2Cl2",
+    category:"Inorganic",
+    atoms:[
+        ["S",0,0,0],
+        ["O",1.1,0,0],
+        ["O",-1.1,0,0],
+        ["Cl",0,1.3,0],
+        ["Cl",0,-1.3,0]
+    ],
+    bonds:[[0,1,2],[0,2,2],[0,3,1],[0,4,1]],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dichlorine monoxide",
+    formula:"Cl2O",
+    category:"Inorganic",
+    atoms:[
+        ["Cl",-1,0.5,0],
+        ["O",0,0,0],
+        ["Cl",1,0.5,0]
+    ],
+    bonds:[[0,1,1],[1,2,1]],
+    shape:"Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~110°",
+    polarity:"Polar"
+},
+
+{
+    name:"Chlorine dioxide",
+    formula:"ClO2",
+    category:"Gases",
+    atoms:[
+        ["Cl",0,0,0],
+        ["O",-1,0.8,0],
+        ["O",1,0.8,0]
+    ],
+    bonds:[[0,1,2],[0,2,1]],
+    shape:"Bent",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~118°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dinitrogen tetroxide",
+    formula:"N2O4",
+    category:"Gases",
+    atoms:[
+        ["N",-0.8,0,0],
+        ["N",0.8,0,0],
+        ["O",-1.5,0.9,0],
+        ["O",-1.5,-0.9,0],
+        ["O",1.5,0.9,0],
+        ["O",1.5,-0.9,0]
+    ],
+    bonds:[
+        [0,1,1],
+        [0,2,2],[0,3,1],
+        [1,4,2],[1,5,1]
+    ],
+    shape:"Planar around N",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Phosphorus trioxide",
+    formula:"P4O6",
+    category:"Inorganic",
+    atoms:[
+        ["P",1,1,1],
+        ["P",-1,-1,1],
+        ["P",-1,1,-1],
+        ["P",1,-1,-1],
+        ["O",0,1.2,1.2],
+        ["O",-1.2,0,1.2],
+        ["O",-1.2,1.2,0],
+        ["O",1.2,0,-1.2],
+        ["O",1.2,-1.2,0],
+        ["O",0,-1.2,-1.2]
+    ],
+    bonds:[
+        [0,4,1],[0,5,1],[0,6,1],
+        [1,4,1],[1,5,1],[1,7,1],
+        [2,6,1],[2,7,1],[2,8,1],
+        [3,8,1],[3,9,1],[3,7,1]
+    ],
+    shape:"Polyhedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Sulfur hexafluoride",
+    formula:"SF6",
+    category:"Gases",
+    atoms:[
+        ["S",0,0,0],
+        ["F",1.3,0,0],
+        ["F",-1.3,0,0],
+        ["F",0,1.3,0],
+        ["F",0,-1.3,0],
+        ["F",0,0,1.3],
+        ["F",0,0,-1.3]
+    ],
+    bonds:[
+        [0,1,1],[0,2,1],[0,3,1],
+        [0,4,1],[0,5,1],[0,6,1]
+    ],
+    shape:"Octahedral",
+    domains:6,
+    hybridization:"sp3d2",
+    angle:"90° / 180°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Iodine monochloride",
+    formula:"ICl",
+    category:"Inorganic",
+    atoms:[
+        ["I",-0.8,0,0],
+        ["Cl",0.8,0,0]
+    ],
+    bonds:[[0,1,1]],
+    shape:"Linear",
+    domains:1,
+    hybridization:"—",
+    angle:"180°",
+    polarity:"Polar"
+},
+
+{
+    name:"Bromine chloride",
+    formula:"BrCl",
+    category:"Inorganic",
+    atoms:[
+        ["Br",-0.85,0,0],
+        ["Cl",0.85,0,0]
+    ],
+    bonds:[[0,1,1]],
+    shape:"Linear",
+    domains:1,
+    hybridization:"—",
+    angle:"180°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen peroxide",
+    formula:"H2O2",
+    category:"Inorganic",
+    atoms:[
+        ["O",-0.7,0,0],
+        ["O",0.7,0.3,0],
+        ["H",-1.2,0.7,0.5],
+        ["H",1.2,0.9,-0.5]
+    ],
+    bonds:[[0,1,1],[0,2,1],[1,3,1]],
+    shape:"Nonlinear",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~94°",
+    polarity:"Polar"
+},
+
+/* ===================== 121–130: ORGANIC ===================== */
+
+{
+    name:"Propane",
+    formula:"C3H8",
+    category:"Organic",
+    atoms:[
+        ["C",-1.3,0,0],
+        ["C",0,0,0],
+        ["C",1.3,0,0],
+        ["H",-1.8,0.9,0],
+        ["H",-1.8,-0.45,0.8],
+        ["H",-1.8,-0.45,-0.8],
+        ["H",0,1,0],
+        ["H",0,-1,0],
+        ["H",1.8,0.9,0],
+        ["H",1.8,-0.45,0.8],
+        ["H",1.8,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],
+        [0,3,1],[0,4,1],[0,5,1],
+        [1,6,1],[1,7,1],
+        [2,8,1],[2,9,1],[2,10,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Propene",
+    formula:"C3H6",
+    category:"Organic",
+    atoms:[
+        ["C",-1.3,0,0],
+        ["C",0,0,0],
+        ["C",1.3,0,0],
+        ["H",-1.8,0.9,0],
+        ["H",-1.8,-0.9,0],
+        ["H",0,1.1,0],
+        ["H",0,-1.1,0],
+        ["H",1.8,0.9,0],
+        ["H",1.8,-0.45,0.8],
+        ["H",1.8,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],
+        [0,3,1],[0,4,1],
+        [1,5,1],[1,6,1],
+        [2,7,1],[2,8,1],[2,9,1]
+    ],
+    shape:"Trigonal planar / Tetrahedral",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"120° / 109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Propyne",
+    formula:"C3H4",
+    category:"Organic",
+    atoms:[
+        ["C",-1.3,0,0],
+        ["C",0,0,0],
+        ["C",1.2,0,0],
+        ["H",-2,0,0],
+        ["H",1.9,0.9,0],
+        ["H",1.9,-0.45,0.8],
+        ["H",1.9,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,1],
+        [1,2,3],
+        [0,3,1],
+        [2,4,1],[2,5,1],[2,6,1]
+    ],
+    shape:"Linear at C≡C",
+    domains:2,
+    hybridization:"sp",
+    angle:"180°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Butane",
+    formula:"C4H10",
+    category:"Organic",
+    atoms:[
+        ["C",-2,0,0],
+        ["C",-0.7,0,0],
+        ["C",0.7,0,0],
+        ["C",2,0,0],
+        ["H",-2.5,0.9,0],
+        ["H",-2.5,-0.45,0.8],
+        ["H",-2.5,-0.45,-0.8],
+        ["H",-0.7,1,0],
+        ["H",-0.7,-1,0],
+        ["H",0.7,1,0],
+        ["H",0.7,-1,0],
+        ["H",2.5,0.9,0],
+        ["H",2.5,-0.45,0.8],
+        ["H",2.5,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],[2,3,1],
+        [0,4,1],[0,5,1],[0,6,1],
+        [1,7,1],[1,8,1],
+        [2,9,1],[2,10,1],
+        [3,11,1],[3,12,1],[3,13,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Methanethiol",
+    formula:"CH3SH",
+    category:"Organic",
+    atoms:[
+        ["C",-0.8,0,0],
+        ["S",0.6,0,0],
+        ["H",-1.2,0.9,0],
+        ["H",-1.2,-0.45,0.8],
+        ["H",-1.2,-0.45,-0.8],
+        ["H",1.2,0.7,0]
+    ],
+    bonds:[
+        [0,1,1],
+        [0,2,1],[0,3,1],[0,4,1],
+        [1,5,1]
+    ],
+    shape:"Tetrahedral / Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5° / ~96°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dimethyl sulfide",
+    formula:"(CH3)2S",
+    category:"Organic",
+    atoms:[
+        ["S",0,0,0],
+        ["C",-1.3,0.7,0],
+        ["C",1.3,0.7,0],
+        ["H",-1.8,1.4,0],
+        ["H",-1.8,0,0.8],
+        ["H",-1.8,0,-0.8],
+        ["H",1.8,1.4,0],
+        ["H",1.8,0,0.8],
+        ["H",1.8,0,-0.8]
+    ],
+    bonds:[
+        [0,1,1],[0,2,1],
+        [1,3,1],[1,4,1],[1,5,1],
+        [2,6,1],[2,7,1],[2,8,1]
+    ],
+    shape:"Bent around S",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~99°",
+    polarity:"Polar"
+},
+
+{
+    name:"Nitromethane",
+    formula:"CH3NO2",
+    category:"Organic",
+    atoms:[
+        ["C",-1.2,0,0],
+        ["N",0,0,0],
+        ["O",1.1,0.8,0],
+        ["O",1.1,-0.8,0],
+        ["H",-1.7,0.9,0],
+        ["H",-1.7,-0.45,0.8],
+        ["H",-1.7,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,1],
+        [1,2,2],
+        [1,3,1],
+        [0,4,1],[0,5,1],[0,6,1]
+    ],
+    shape:"Trigonal planar / Tetrahedral",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"~120° / 109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dimethylformamide",
+    formula:"C3H7NO",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["N",-0.8,0.9,0],
+        ["C",-1.4,-0.5,0],
+        ["C",-1.7,1.8,0],
+        ["H",-2.1,-1,0],
+        ["H",-1.8,0,0.8],
+        ["H",-1.8,0,-0.8]
+    ],
+    bonds:[
+        [0,1,2],[0,2,1],[0,3,1],
+        [2,4,1],
+        [3,5,1],[3,6,1],[3,7,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Ethylene glycol",
+    formula:"C2H6O2",
+    category:"Organic",
+    atoms:[
+        ["C",-0.8,0,0],
+        ["C",0.8,0,0],
+        ["O",-1.5,0.9,0],
+        ["O",1.5,0.9,0],
+        ["H",-1.1,-0.9,0],
+        ["H",-0.9,0,0.9],
+        ["H",1.1,-0.9,0],
+        ["H",0.9,0,0.9],
+        ["H",-2,1.4,0],
+        ["H",2,1.4,0]
+    ],
+    bonds:[
+        [0,1,1],
+        [0,2,1],[0,4,1],[0,5,1],
+        [1,3,1],[1,6,1],[1,7,1],
+        [2,8,1],[3,9,1]
+    ],
+    shape:"Tetrahedral / Bent",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5° / ~104.5°",
+    polarity:"Polar"
+},
+
+/* ===================== 131–140: COMMON ORGANIC FUNCTIONAL GROUPS ===================== */
+
+{
+    name:"Dimethyl carbonate",
+    formula:"C3H6O3",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.7,0.9,0],
+        ["O",-0.7,-0.9,0],
+        ["C",-1.8,1.5,0],
+        ["C",-1.8,-1.5,0]
+    ],
+    bonds:[
+        [0,1,2],[0,2,1],[0,3,1],
+        [2,4,1],[3,5,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Methyl acetate",
+    formula:"C3H6O2",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.7,0.9,0],
+        ["C",-0.7,-1.2,0],
+        ["C",-1.8,1.5,0]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [2,4,1]
+    ],
+    shape:"Trigonal planar / Tetrahedral",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"~120° / 109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Ethyl acetate",
+    formula:"C4H8O2",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.7,0.9,0],
+        ["C",-0.7,-1.2,0],
+        ["C",-1.8,1.5,0],
+        ["C",-2.8,1.5,0]
+    ],
+    bonds:[
+        [0,1,2],[0,2,1],[0,3,1],
+        [2,4,1],[4,5,1]
+    ],
+    shape:"Trigonal planar / Tetrahedral",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"~120° / 109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Acetaldehyde oxime",
+    formula:"C2H5NO",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["N",1.2,0,0],
+        ["O",2.1,0.8,0],
+        ["C",-1.2,0,0],
+        ["H",-1.7,0.9,0],
+        ["H",-1.7,-0.45,0.8],
+        ["H",-1.7,-0.45,-0.8]
+    ],
+    bonds:[
+        [0,1,2],
+        [1,2,1],
+        [0,3,1],
+        [3,4,1],[3,5,1],[3,6,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Acetanilide",
+    formula:"C8H9NO",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["N",-0.8,0.9,0],
+        ["C",-1.4,-0.5,0]
+    ],
+    bonds:[
+        [0,1,2],[0,2,1],[0,3,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"~120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Aniline",
+    formula:"C6H7N",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.21,0],
+        ["C",-0.7,1.21,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.21,0],
+        ["C",0.7,-1.21,0],
+        ["N",2.3,0,0]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],[2,3,2],
+        [3,4,1],[4,5,2],[5,0,1],
+        [0,6,1]
+    ],
+    shape:"Planar ring / Pyramidal at N",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"120° / ~107°",
+    polarity:"Polar"
+},
+
+{
+    name:"Toluene",
+    formula:"C7H8",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.21,0],
+        ["C",-0.7,1.21,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.21,0],
+        ["C",0.7,-1.21,0],
+        ["C",2.5,0,0]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],[2,3,2],
+        [3,4,1],[4,5,2],[5,0,1],
+        [0,6,1]
+    ],
+    shape:"Planar aromatic ring / Tetrahedral methyl",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"120° / 109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Styrene",
+    formula:"C8H8",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.21,0],
+        ["C",-0.7,1.21,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.21,0],
+        ["C",0.7,-1.21,0],
+        ["C",2.5,0,0],
+        ["C",3.6,0,0]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],[2,3,2],
+        [3,4,1],[4,5,2],[5,0,1],
+        [0,6,1],[6,7,2]
+    ],
+    shape:"Planar aromatic / Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"120°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Cyclohexane",
+    formula:"C6H12",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.2,0],
+        ["C",-0.7,1.2,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.2,0],
+        ["C",0.7,-1.2,0]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],[2,3,1],
+        [3,4,1],[4,5,1],[5,0,1]
+    ],
+    shape:"Chair / Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109.5°",
+    polarity:"Nonpolar"
+},
+
+{
+    name:"Cyclohexene",
+    formula:"C6H10",
+    category:"Organic",
+    atoms:[
+        ["C",1.4,0,0],
+        ["C",0.7,1.2,0],
+        ["C",-0.7,1.2,0],
+        ["C",-1.4,0,0],
+        ["C",-0.7,-1.2,0],
+        ["C",0.7,-1.2,0]
+    ],
+    bonds:[
+        [0,1,2],[1,2,1],[2,3,1],
+        [3,4,1],[4,5,1],[5,0,1]
+    ],
+    shape:"Nonplanar ring",
+    domains:3,
+    hybridization:"sp2 / sp3",
+    angle:"~120° / 109.5°",
+    polarity:"Nonpolar"
+},
+
+/* ===================== 141–150: IMPORTANT BIO/GENERAL CHEMISTRY ===================== */
+
+{
+    name:"Glucose",
+    formula:"C6H12O6",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["C",1.3,0,0],
+        ["C",2.6,0,0],
+        ["C",3.9,0,0],
+        ["C",5.2,0,0],
+        ["C",6.5,0,0],
+        ["O",7.5,0.8,0]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],[2,3,1],
+        [3,4,1],[4,5,1],[5,6,1]
+    ],
+    shape:"Tetrahedral carbon centers",
+    domains:4,
+    hybridization:"sp3",
+    angle:"~109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Fructose",
+    formula:"C6H12O6",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["C",1.3,0,0],
+        ["C",2.6,0,0],
+        ["C",3.9,0,0],
+        ["C",5.2,0,0],
+        ["C",6.5,0,0],
+        ["O",2.6,1.2,0]
+    ],
+    bonds:[
+        [0,1,1],[1,2,1],[2,3,1],
+        [3,4,1],[4,5,1],[2,6,2]
+    ],
+    shape:"Tetrahedral / Trigonal planar",
+    domains:4,
+    hybridization:"sp3 / sp2",
+    angle:"109.5° / 120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Glycine",
+    formula:"C2H5NO2",
+    category:"Organic",
+    atoms:[
+        ["C",0,0,0],
+        ["N",-1.2,0,0],
+        ["C",1.2,0,0],
+        ["O",2.2,0.8,0],
+        ["O",2.2,-0.8,0]
+    ],
+    bonds:[
+        [0,1,1],
+        [0,2,1],
+        [2,3,2],
+        [2,4,1]
+    ],
+    shape:"Tetrahedral / Trigonal planar",
+    domains:4,
+    hybridization:"sp3 / sp2",
+    angle:"109.5° / 120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Carbonic acid",
+    formula:"H2CO3",
+    category:"Acids",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.6,1.04,0],
+        ["O",-0.6,-1.04,0],
+        ["H",-1.1,1.5,0],
+        ["H",-1.1,-1.5,0]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [2,4,1],
+        [3,5,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen carbonate",
+    formula:"HCO3-",
+    category:"Ions",
+    atoms:[
+        ["C",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-0.6,1.04,0],
+        ["O",-0.6,-1.04,0],
+        ["H",-1.1,-1.5,0]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [3,4,1]
+    ],
+    shape:"Trigonal planar",
+    domains:3,
+    hybridization:"sp2",
+    angle:"120°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen sulfate",
+    formula:"HSO4-",
+    category:"Ions",
+    atoms:[
+        ["S",0,0,0],
+        ["O",1.2,0,0],
+        ["O",-1.2,0,0],
+        ["O",0,1.2,0],
+        ["O",0,-1.2,0],
+        ["H",0,-1.8,0.5]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,2],
+        [0,3,1],
+        [0,4,1],
+        [4,5,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen phosphate",
+    formula:"HPO4-2",
+    category:"Ions",
+    atoms:[
+        ["P",0,0,0],
+        ["O",1,1,1],
+        ["O",-1,-1,1],
+        ["O",-1,1,-1],
+        ["O",1,-1,-1],
+        ["H",1.5,-1.5,-1.5]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [0,4,1],
+        [4,5,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Dihydrogen phosphate",
+    formula:"H2PO4-",
+    category:"Ions",
+    atoms:[
+        ["P",0,0,0],
+        ["O",1,1,1],
+        ["O",-1,-1,1],
+        ["O",-1,1,-1],
+        ["O",1,-1,-1],
+        ["H",-1.5,1.5,-1.5],
+        ["H",1.5,-1.5,-1.5]
+    ],
+    bonds:[
+        [0,1,2],
+        [0,2,1],
+        [0,3,1],
+        [0,4,1],
+        [3,5,1],
+        [4,6,1]
+    ],
+    shape:"Tetrahedral",
+    domains:4,
+    hybridization:"sp3",
+    angle:"109.5°",
+    polarity:"Polar"
+},
+
+{
+    name:"Hydrogen sulfide ion",
+    formula:"HS-",
+    category:"Ions",
+    atoms:[
+        ["S",-0.7,0,0],
+        ["H",0.7,0,0]
+    ],
+    bonds:[[0,1,1]],
+    shape:"Linear",
+    domains:1,
+    hybridization:"—",
+    angle:"180°",
+    polarity:"Polar"
+},
+
+{
+    name:"Peroxide ion",
+    formula:"O2-2",
+    category:"Ions",
+    atoms:[
+        ["O",-0.7,0,0],
+        ["O",0.7,0,0]
+    ],
+    bonds:[[0,1,1]],
+    shape:"Linear",
+    domains:1,
+    hybridization:"—",
+    angle:"180°",
+    polarity:"Nonpolar"
+}
+
+{
+    name:"Peroxide ion",
+    formula:"O2-2",
+    category:"Ions",
+    atoms:[
+        ["O",-0.7,0,0],
+        ["O",0.7,0,0]
+    ],
+    bonds:[[0,1,1]],
+    shape:"Linear",
+    domains:1,
+    hybridization:"—",
+    angle:"180°",
+    polarity:"Nonpolar"
+}
+
 {
     name:"Hydrogen",
     formula:"H2",
