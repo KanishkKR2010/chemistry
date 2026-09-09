@@ -9607,8 +9607,8 @@ const molecules = [
     
         const geometry =
             new THREE.CylinderGeometry(
-                0.09,
-                0.09,
+                0.06,
+                0.06,
                 length,
                 16
             );
