@@ -16,7 +16,7 @@ let showAngles = true;
 const molecules = [
 
 /* ===================== DIATOMIC & SIMPLE MOLECULES ===================== */
-
+   {
     name:"Hydrogen sulfide",
     formula:"H2S",
     category:"Gases",
