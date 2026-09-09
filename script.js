@@ -9987,98 +9987,147 @@ const molecules = [
     /* ============================================================
        MOUSE CONTROLS
     ============================================================ */
-    
-    function setupMouseControls() {
-    
-        const canvas =
-            renderer.domElement;
-    
-    
-        canvas.addEventListener(
-            "mousedown",
-            e => {
-    
-                mouseDown = true;
-    
-                previousMouse.x =
-                    e.clientX;
-    
-                previousMouse.y =
-                    e.clientY;
-    
-            }
+
+/* ============================================================
+   MOUSE + TOUCH + POINTER CONTROLS
+============================================================ */
+
+function setupMouseControls() {
+
+    const canvas = renderer.domElement;
+
+    let dragging = false;
+
+    let previousX = 0;
+    let previousY = 0;
+
+    /* Prevent browser gestures/scrolling inside viewer */
+    canvas.style.touchAction = "none";
+
+    /* ========================================================
+       POINTER DOWN
+       Works with:
+       - Mouse
+       - Touch
+       - Stylus
+    ======================================================== */
+
+    canvas.addEventListener("pointerdown", (e) => {
+
+        /* Only allow primary pointer */
+        if (e.isPrimary === false) return;
+
+        dragging = true;
+
+        previousX = e.clientX;
+        previousY = e.clientY;
+
+        /* Capture pointer so dragging continues */
+        canvas.setPointerCapture(e.pointerId);
+
+    });
+
+
+    /* ========================================================
+       POINTER MOVE
+    ======================================================== */
+
+    canvas.addEventListener("pointermove", (e) => {
+
+        if (!dragging) return;
+
+        if (e.isPrimary === false) return;
+
+        const dx = e.clientX - previousX;
+        const dy = e.clientY - previousY;
+
+        /* Rotate molecule */
+
+        moleculeGroup.rotation.y += dx * 0.01;
+
+        moleculeGroup.rotation.x += dy * 0.01;
+
+        /* Optional: prevent excessive X rotation */
+
+        moleculeGroup.rotation.x = Math.max(
+            -Math.PI,
+            Math.min(
+                Math.PI,
+                moleculeGroup.rotation.x
+            )
         );
-    
-    
-        window.addEventListener(
-            "mouseup",
-            () => {
-    
-                mouseDown = false;
-    
-            }
+
+        previousX = e.clientX;
+        previousY = e.clientY;
+
+    });
+
+
+    /* ========================================================
+       POINTER UP
+    ======================================================== */
+
+    canvas.addEventListener("pointerup", (e) => {
+
+        dragging = false;
+
+        try {
+            canvas.releasePointerCapture(e.pointerId);
+        } catch (error) {
+            /* Pointer capture may already be released */
+        }
+
+    });
+
+
+    /* ========================================================
+       POINTER CANCEL
+    ======================================================== */
+
+    canvas.addEventListener("pointercancel", () => {
+
+        dragging = false;
+
+    });
+
+
+    /* ========================================================
+       POINTER LEAVE
+    ======================================================== */
+
+    canvas.addEventListener("pointerleave", () => {
+
+        /* Don't force-stop touch dragging because
+           pointer capture handles it. */
+
+        if (dragging && !("ontouchstart" in window)) {
+            dragging = false;
+        }
+
+    });
+
+
+    /* ========================================================
+       MOUSE WHEEL / TRACKPAD ZOOM
+    ======================================================== */
+
+    canvas.addEventListener("wheel", (e) => {
+
+        e.preventDefault();
+
+        camera.position.z += e.deltaY * 0.01;
+
+        camera.position.z = Math.max(
+            2.5,
+            Math.min(
+                30,
+                camera.position.z
+            )
         );
-    
-    
-        window.addEventListener(
-            "mousemove",
-            e => {
-    
-                if(!mouseDown)
-                    return;
-    
-    
-                const dx =
-                    e.clientX -
-                    previousMouse.x;
-    
-    
-                const dy =
-                    e.clientY -
-                    previousMouse.y;
-    
-    
-                moleculeGroup.rotation.y +=
-                    dx * 0.01;
-    
-    
-                moleculeGroup.rotation.x +=
-                    dy * 0.01;
-    
-    
-                previousMouse.x =
-                    e.clientX;
-    
-    
-                previousMouse.y =
-                    e.clientY;
-    
-            }
-        );
-    
-    
-        canvas.addEventListener(
-            "wheel",
-            e => {
-    
-                camera.position.z +=
-                    e.deltaY * 0.01;
-    
-    
-                camera.position.z =
-                    Math.max(
-                        2.5,
-                        Math.min(
-                            30,
-                            camera.position.z
-                        )
-                    );
-    
-            }
-        );
-    
-    }
-    
+
+    }, { passive: false });
+
+}
     
     /* ============================================================
        ANIMATION
